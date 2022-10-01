@@ -15,25 +15,28 @@ func _ready():
 		ray.global_rotation = Vector3()
 
 func _physics_process(delta):
-	var dir = global_translation.direction_to(player.transform.origin)
-	var dir_l = global_translation.direction_to(player.transform.origin + dir.rotated(Vector3.UP, PI / 2) / 3)
-	var dir_r = global_translation.direction_to(player.transform.origin + dir.rotated(Vector3.UP, -PI / 2) / 3)
-	var dist = global_translation.distance_to(player.transform.origin)
-	$Mesh/Camera.look_at(player.transform.origin, Vector3.UP)
-	$Light.look_at(player.transform.origin, Vector3.UP)
-	$SpotLight.look_at(player.transform.origin, Vector3.UP)
-	ray1.cast_to = dir * dist
-	ray2.cast_to = dir_l * dist
-	ray3.cast_to = dir_r * dist
-	$SpotLight.light_energy = Global.timer / 10 * 2
+	if not Global.intro:
+		var dir = global_translation.direction_to(player.transform.origin)
+		var dir_l = global_translation.direction_to(player.transform.origin + dir.rotated(Vector3.UP, PI / 2) / 3)
+		var dir_r = global_translation.direction_to(player.transform.origin + dir.rotated(Vector3.UP, -PI / 2) / 3)
+		var dist = global_translation.distance_to(player.transform.origin)
+		$Mesh/Camera.look_at(player.transform.origin, Vector3.UP)
+		$Light.look_at(player.transform.origin, Vector3.UP)
+		$SpotLight.look_at(player.transform.origin, Vector3.UP)
+		ray1.cast_to = dir * dist
+		ray2.cast_to = dir_l * dist
+		ray3.cast_to = dir_r * dist
+		$SpotLight.light_energy = Global.timer / 10 * 2
 
 func _on_timeout():
-	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
-	tween.tween_property($Light, "light_energy", 5.0, 0.2)
-	yield(get_tree().create_timer(0.5), "timeout")
-	for ray in rays:
-		if ray.is_colliding():
-			if ray.get_collider().is_in_group("player"):
-				get_tree().reload_current_scene()
-	tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	tween.tween_property($Light, "light_energy", 0.0, 0.7)
+	if not Global.intro:
+		var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
+		tween.tween_property($Light, "light_energy", 5.0, 0.2)
+		yield(get_tree().create_timer(0.5), "timeout")
+		for ray in rays:
+			if ray.is_colliding():
+				if ray.get_collider().is_in_group("player"):
+					Global.reset()
+					get_tree().reload_current_scene()
+		tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		tween.tween_property($Light, "light_energy", 0.0, 0.7)

@@ -3,7 +3,7 @@ extends StaticBody
 signal activated
 var active: bool
 
-func _on_input_event(camera:Node, event:InputEvent, position:Vector3, normal:Vector3, shape_idx:int):
+func _on_input_event(camera: Node, event: InputEvent, position: Vector3, normal: Vector3, shape_idx: int):
 	if not active:
 		if event.is_action_pressed("action"):
 			emit_signal("activated")

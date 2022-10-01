@@ -9,7 +9,7 @@ func _process(delta: float):
 	if get_parent().velocity.length() > 3.5:
 		footstep_timer -= delta
 		if footstep_timer <= 0:
-			footstep_timer = 0.4
+			footstep_timer = 0.42
 			play_audio("footstep", 6)
 	else:
 		footstep_timer = 0
