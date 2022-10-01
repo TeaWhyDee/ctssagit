@@ -14,7 +14,7 @@ albedo_color = Color( 0.152941, 0.458824, 0.560784, 1 )
 [sub_resource type="Environment" id=1]
 background_color = Color( 1, 1, 1, 1 )
 background_energy = 0.0
-ambient_light_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+ambient_light_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 ambient_light_sky_contribution = 0.0
 fog_enabled = true
 fog_color = Color( 0.352941, 0.258824, 0.54902, 1 )
@@ -45,7 +45,7 @@ depth = 40.146
 material = SubResource( 3 )
 
 [node name="CSGBox3" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.5495, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0225668, 15.3955, 0.114632 )
 use_collision = true
 width = 65.4871
 depth = 67.1061
@@ -55,15 +55,15 @@ material = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.37411 )
 use_collision = true
 width = 65.4871
-height = 78.0507
+height = 34.7582
 depth = 2.01865
 material = SubResource( 2 )
 
 [node name="CSGBox5" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -25.2591 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.598, 6.08949, -25.2591 )
 use_collision = true
-width = 65.4871
-height = 78.0507
+width = 36.9152
+height = 17.325
 depth = 2.01865
 material = SubResource( 2 )
 
@@ -75,27 +75,19 @@ height = 78.0507
 depth = 2.01865
 material = SubResource( 2 )
 
-[node name="CSGBox7" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.707, 18.7605, 0.716797 )
-use_collision = true
-width = 72.2362
-height = 28.6054
-depth = 2.01865
-material = SubResource( 2 )
-
 [node name="CSGBox8" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.707, 5.31347, -25.0118 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.707, 12.1191, -25.0118 )
 use_collision = true
 width = 14.4782
-height = 11.1257
+height = 25.7814
 depth = 2.01865
 material = SubResource( 2 )
 
 [node name="CSGBox9" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.707, 5.31347, -2.93594 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.707, 8.9825, -2.93594 )
 use_collision = true
 width = 21.691
-height = 11.1257
+height = 24.6015
 depth = 2.01865
 material = SubResource( 2 )
 
@@ -115,19 +107,19 @@ height = 5.55993
 depth = 2.72882
 material = SubResource( 2 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
-
 [node name="Box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.82666 )
 
 [node name="Box2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2865, 1, -5.46735 )
 
-[node name="Detector" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8253, 8.69353, -23.2575 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
 bus = "Music"
+
+[node name="Detector" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.0824, 7.86399, -23.2301 )
