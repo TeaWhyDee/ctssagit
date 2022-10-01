@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.75
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.94902, 0.682353, 0.294118, 1 )
+
+[sub_resource type="CylinderMesh" id=2]
+material = SubResource( 3 )
+top_radius = 0.75
+bottom_radius = 0.75
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0 )
+current = true
+
+[node name="LightRot" type="Spatial" parent="."]
+
+[node name="SpotLight" type="SpotLight" parent="LightRot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.783873 )
+shadow_enabled = true
+shadow_bias = -0.01
+shadow_reverse_cull_face = true
+spot_range = 15.9564
+spot_attenuation = 2.14355
+spot_angle = 58.4818
+spot_angle_attenuation = 0.31864

@@ -17,4 +17,4 @@ func _physics_process(delta: float):
 			col.collider.apply_central_impulse(-col.normal * INERTIA)
 	
 	var mouse_pos = get_viewport().get_mouse_position() - get_viewport().size / 2
-	$SpotLight.look_at(to_global(Vector3(mouse_pos.x, 0, mouse_pos.y)), Vector3.UP)
+	$LightRot.look_at(to_global(Vector3(mouse_pos.x, 0, mouse_pos.y)), Vector3.UP)
