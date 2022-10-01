@@ -13,7 +13,7 @@ material = SubResource( 3 )
 top_radius = 0.75
 bottom_radius = 0.75
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=["player"]]
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
