@@ -12,14 +12,16 @@ func _ready():
 
 func _physics_process(delta):
 	var dir = transform.origin.direction_to(player.transform.origin)
-	var dir_l = transform.origin.direction_to(player.transform.origin + dir.rotated(Vector3.UP, PI / 2) / 2)
-	var dir_r = transform.origin.direction_to(player.transform.origin + dir.rotated(Vector3.UP, -PI / 2) / 2)
+	var dir_l = transform.origin.direction_to(player.transform.origin + dir.rotated(Vector3.UP, PI / 2) / 3)
+	var dir_r = transform.origin.direction_to(player.transform.origin + dir.rotated(Vector3.UP, -PI / 2) / 3)
 	var dist = transform.origin.distance_to(player.transform.origin)
 	$Mesh.look_at(player.transform.origin, Vector3.UP)
 	$Light.look_at(player.transform.origin, Vector3.UP)
+	$SpotLight.look_at(player.transform.origin, Vector3.UP)
 	ray1.cast_to = dir * dist
 	ray2.cast_to = dir_l * dist
 	ray3.cast_to = dir_r * dist
+	$SpotLight.light_energy = Global.timer / 10
 
 func _on_timeout():
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)

@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const SPEED = 15
+const SPEED = 8
 const INERTIA = 0.1
 var direction: Vector2
 var velocity: Vector3

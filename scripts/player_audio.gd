@@ -6,11 +6,13 @@ const AUDIO = {
 var footstep_timer: float
 
 func _process(delta: float):
-	footstep_timer -= delta
-	if footstep_timer <= 0:
-		footstep_timer = 0.25
-		if get_parent().direction:
+	if get_parent().direction:
+		footstep_timer -= delta
+		if footstep_timer <= 0:
+			footstep_timer = 0.4
 			play_audio("footstep", 6)
+	else:
+		footstep_timer = 0
 
 func play_audio(key: String, amount: int):
 	var player = AudioStreamPlayer3D.new()
@@ -20,6 +22,7 @@ func play_audio(key: String, amount: int):
 	randomize()
 	var clip_to_play = audio_stream_array[randi() % audio_stream_array.size()]
 	player.set_stream(clip_to_play)
+	player.bus = "SFX"
 	player.autoplay = true
 	add_child(player)
 	yield(player, "finished")

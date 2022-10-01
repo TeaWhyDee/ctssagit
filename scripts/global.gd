@@ -1,7 +1,7 @@
 extends Node
 
 signal timeout
-const TIMEOUT = 5
+const TIMEOUT = 10
 var timer: float
 
 func _process(delta: float):
