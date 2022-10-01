@@ -16,6 +16,7 @@ run/main_scene="res://scenes/Main.tscn"
 [autoload]
 
 Global="*res://scripts/global.gd"
+FX="*res://scenes/FX.tscn"
 
 [display]
 

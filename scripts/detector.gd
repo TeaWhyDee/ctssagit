@@ -22,11 +22,13 @@ func _physics_process(delta):
 	ray3.cast_to = dir_r * dist
 
 func _on_timeout():
-	$Light.show()
+	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
+	tween.tween_property($Light, "light_energy", 5.0, 0.2)
 	yield(get_tree().create_timer(0.5), "timeout")
 	for ray in rays:
 		if ray.is_colliding():
 			if ray.get_collider() is KinematicBody:
 				get_tree().quit()
 				return
-	$Light.hide()
+	tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property($Light, "light_energy", 0.0, 0.7)
