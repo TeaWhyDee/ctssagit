@@ -16,9 +16,14 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 
 current = true
 
 [node name="SpotLight" type="SpotLight" parent="."]
-light_energy = 2.0
 shadow_enabled = true
+shadow_bias = -0.01
+shadow_reverse_cull_face = true
 spot_range = 15.9564
 spot_attenuation = 2.14355
 spot_angle = 58.4818
 spot_angle_attenuation = 3.86375
+
+[node name="OmniLight" type="OmniLight" parent="."]
+visible = false
+shadow_enabled = true
