@@ -18,9 +18,6 @@ func _physics_process(delta: float):
 		var col = get_slide_collision(i)
 		if col.collider is RigidBody:
 			col.collider.apply_central_impulse(-col.normal * INERTIA)
-	
-	var mouse_pos = get_viewport().get_mouse_position() - get_viewport().size / 2
-	$LightRot.look_at(to_global(Vector3(mouse_pos.x, 0, mouse_pos.y)), Vector3.UP)
 
 func _on_timeout():
 	var tween = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
