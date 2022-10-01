@@ -6,7 +6,7 @@ const AUDIO = {
 var footstep_timer: float
 
 func _process(delta: float):
-	if get_parent().direction:
+	if get_parent().velocity.length() > 3.5:
 		footstep_timer -= delta
 		if footstep_timer <= 0:
 			footstep_timer = 0.4

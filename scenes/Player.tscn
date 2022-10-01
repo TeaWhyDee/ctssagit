@@ -1,36 +1,89 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player_audio.gd" type="Script" id=2]
+[ext_resource path="res://char.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CylinderShape" id=1]
-height = 1.0
-radius = 0.5
+height = 2.00813
+radius = 0.387188
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.94902, 0.682353, 0.294118, 1 )
+[sub_resource type="Shader" id=4]
+code = "/*
+	Dither Opacity Shader by Firerabbit
+	
+	MIT License
+*/
 
-[sub_resource type="CylinderMesh" id=2]
-material = SubResource( 3 )
-top_radius = 0.5
-bottom_radius = 0.5
-height = 1.0
-radial_segments = 8
+shader_type spatial;
+
+uniform sampler2D _albedo : hint_albedo;
+uniform float _alpha_clip : hint_range(0,1) = 0.01;
+
+const vec4 dither[4] = {
+	vec4(0.0625, 0.5625, 0.1875,  0.6875),
+	vec4(0.8125, 0.3125, 0.9375,  0.4375),
+	vec4(0.25, 0.75, 0.125, 0.625),
+	vec4(1.0, 0.5, 0.875,  0.375)
+	};
+
+float getValue(int x, int y) {
+	float res = 0.0;
+	switch(y) {
+		case 0:
+			res = dither[x].r;
+			break;
+		case 1:
+			res = dither[x].g;
+			break;
+		case 2:
+			res = dither[x].b;
+			break;
+		case 3:
+			res = dither[x].a;
+			break;		
+	}
+	return res;
+}
+
+void fragment() {
+	vec4 color = texture(SCREEN_TEXTURE, UV);
+	
+	float limit = getValue(int(FRAGCOORD.x) % 4, int(FRAGCOORD.y) % 4);
+	
+	if (color.a < limit || color.a < _alpha_clip) {
+		discard;
+	}
+	ALBEDO = color.rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/_alpha_clip = 0.01
+
+[sub_resource type="QuadMesh" id=6]
+material = SubResource( 5 )
+size = Vector2( 2, 2 )
 
 [node name="Player" type="KinematicBody" groups=["player"]]
 physics_interpolation_mode = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519551, 0 )
 shape = SubResource( 1 )
 
-[node name="Mesh" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
+[node name="Mesh" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, -0.479464, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0 )
 current = true
-fov = 60.0
+
+[node name="MeshInstance" type="MeshInstance" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36028e-08, -0.53997 )
+visible = false
+mesh = SubResource( 6 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 visible = false
@@ -41,3 +94,5 @@ omni_attenuation = 2.82843
 
 [node name="AudioPlayer" type="Spatial" parent="."]
 script = ExtResource( 2 )
+
+[editable path="Mesh"]

@@ -38,6 +38,7 @@ enabled = true
 shape = SubResource( 3 )
 
 [node name="Light" type="SpotLight" parent="."]
+light_color = Color( 1, 0, 0, 1 )
 light_energy = 0.0
 shadow_enabled = true
 shadow_bias = 0.02
@@ -48,13 +49,13 @@ spot_angle = 33.0
 spot_angle_attenuation = 1.41421
 
 [node name="SpotLight" type="SpotLight" parent="."]
-light_color = Color( 1, 0, 0.258824, 1 )
+light_color = Color( 1, 0.392157, 0.552941, 1 )
 shadow_enabled = true
-shadow_bias = 0.02
+shadow_bias = 0.01
 shadow_reverse_cull_face = true
 spot_range = 330.005
-spot_attenuation = 0.840896
+spot_attenuation = 0.901251
 spot_angle = 10.35
-spot_angle_attenuation = 4.59479
+spot_angle_attenuation = 1.46409
 
 [editable path="Mesh"]
