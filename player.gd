@@ -1,7 +1,7 @@
 extends KinematicBody
 
 const SPEED = 20
-const INERTIA = 10
+const INERTIA = 5
 var direction: Vector2
 var velocity: Vector3
 

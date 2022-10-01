@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Box.tscn" type="PackedScene" id=3]
 
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.188235, 0.694118, 0.858824, 1 )
+
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 1, 0, 0, 1 )
+albedo_color = Color( 0.152941, 0.458824, 0.560784, 1 )
 
 [sub_resource type="Environment" id=1]
-ambient_light_color = Color( 0.0470588, 0.0431373, 0.0705882, 1 )
+background_color = Color( 1, 1, 1, 1 )
+background_energy = 0.0
+ambient_light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+ambient_light_sky_contribution = 0.0
 
 [node name="World" type="Spatial"]
 
@@ -18,6 +24,46 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 use_collision = true
 width = 65.4871
 depth = 67.1061
+material = SubResource( 3 )
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.5495, 0 )
+use_collision = true
+width = 65.4871
+depth = 67.1061
+material = SubResource( 3 )
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
+use_collision = true
+width = 65.4871
+height = 78.0507
+depth = 2.01865
+material = SubResource( 2 )
+
+[node name="CSGBox5" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33.3722 )
+use_collision = true
+width = 65.4871
+height = 78.0507
+depth = 2.01865
+material = SubResource( 2 )
+
+[node name="CSGBox6" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.3769, 0, 0.716797 )
+use_collision = true
+width = 72.2362
+height = 78.0507
+depth = 2.01865
+material = SubResource( 2 )
+
+[node name="CSGBox7" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.6963, 0, 0.716797 )
+use_collision = true
+width = 72.2362
+height = 78.0507
+depth = 2.01865
+material = SubResource( 2 )
 
 [node name="CSGBox2" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.44, 0, -12.2606 )
