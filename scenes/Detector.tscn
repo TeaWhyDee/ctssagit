@@ -51,7 +51,6 @@ spot_angle_attenuation = 1.41421
 
 [node name="SpotLight" type="SpotLight" parent="."]
 light_color = Color( 1, 0, 0.258824, 1 )
-light_energy = 4.0
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_reverse_cull_face = true

@@ -1,7 +1,7 @@
 extends KinematicBody
 
 const SPEED = 8
-const INERTIA = 0.1
+const INERTIA = 5
 var direction: Vector2
 var velocity: Vector3
 
@@ -16,8 +16,8 @@ func _physics_process(delta: float):
 
 	for i in get_slide_count():
 		var col = get_slide_collision(i)
-		if col.collider is RigidBody:
-			col.collider.apply_central_impulse(-col.normal * INERTIA)
+		if col.collider.is_in_group("box"):
+			col.collider.add_velo(-col.normal * INERTIA)
 
 func _on_timeout():
 	var tween = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)

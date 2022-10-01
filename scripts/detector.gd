@@ -21,7 +21,7 @@ func _physics_process(delta):
 	ray1.cast_to = dir * dist
 	ray2.cast_to = dir_l * dist
 	ray3.cast_to = dir_r * dist
-	$SpotLight.light_energy = Global.timer / 10
+	$SpotLight.light_energy = Global.timer / 10 * 2
 
 func _on_timeout():
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
@@ -29,7 +29,7 @@ func _on_timeout():
 	yield(get_tree().create_timer(0.5), "timeout")
 	for ray in rays:
 		if ray.is_colliding():
-			if ray.get_collider() is KinematicBody:
+			if ray.get_collider().is_in_group("player"):
 				get_tree().quit()
 				return
 	tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
