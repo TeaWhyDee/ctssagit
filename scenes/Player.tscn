@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player_audio.gd" type="Script" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.75
@@ -37,3 +38,6 @@ spot_range = 15.9564
 spot_attenuation = 2.14355
 spot_angle = 58.4818
 spot_angle_attenuation = 0.31864
+
+[node name="AudioPlayer" type="Spatial" parent="."]
+script = ExtResource( 2 )
