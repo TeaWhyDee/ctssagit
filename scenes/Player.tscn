@@ -30,8 +30,8 @@ current = true
 [node name="OmniLight" type="OmniLight" parent="."]
 shadow_enabled = true
 shadow_bias = 0.407
-omni_range = 11.138
-omni_attenuation = 1.7411
+omni_range = 8.731
+omni_attenuation = 2.82843
 
 [node name="AudioPlayer" type="Spatial" parent="."]
 script = ExtResource( 2 )

@@ -16,6 +16,7 @@ func _physics_process(delta):
 	var dir_r = transform.origin.direction_to(player.transform.origin + dir.rotated(Vector3.UP, -PI / 2) / 2)
 	var dist = transform.origin.distance_to(player.transform.origin)
 	$Mesh.look_at(player.transform.origin, Vector3.UP)
+	$Light.look_at(player.transform.origin, Vector3.UP)
 	ray1.cast_to = dir * dist
 	ray2.cast_to = dir_l * dist
 	ray3.cast_to = dir_r * dist
