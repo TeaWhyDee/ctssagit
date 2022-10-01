@@ -1,11 +1,12 @@
 extends KinematicBody
 
 const SPEED = 8
-const INERTIA = 0.1
+const INERTIA = 3
 var direction: Vector2
 var velocity: Vector3
 
 func _ready():
+	$Camera.set_as_toplevel(true)
 	Global.connect("timeout", self, "_on_timeout")
 
 func _physics_process(delta: float):
@@ -16,8 +17,10 @@ func _physics_process(delta: float):
 
 	for i in get_slide_count():
 		var col = get_slide_collision(i)
-		if col.collider is RigidBody:
-			col.collider.apply_central_impulse(-col.normal * INERTIA)
+		if col.collider.is_in_group("box"):
+			col.collider.add_velo(-col.normal * INERTIA)
+	
+	$Camera.transform.origin = $Camera.transform.origin.linear_interpolate(transform.origin + Vector3(0, 13, 0), delta * 15)
 
 func _on_timeout():
 	var tween = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
