@@ -50,7 +50,7 @@ glow_high_quality = true
 [node name="World2" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0526, 0.5, -16.7305 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6152, 0.5, -13.7125 )
 
 [node name="Alarm" type="AudioStreamPlayer3D" parent="Player/Camera" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.53674e-07, 6 )

@@ -1,17 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://audio/sfx/button_pressed_00.wav" type="AudioStream" id=1]
 [ext_resource path="res://resources/3d/lever.glb" type="PackedScene" id=2]
 [ext_resource path="res://scripts/button.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Prompt.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.496486, 0.40078, 0.418737 )
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.400386, 0.338669, 0.252298 )
 
 [node name="Button" type="StaticBody"]
 script = ExtResource( 3 )
+
+[node name="Lever" parent="." instance=ExtResource( 2 )]
+
+[node name="Lever" parent="Lever" index="1"]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0.0664331 )
 
 [node name="Area" type="Area" parent="."]
 
@@ -21,24 +26,13 @@ shape = SubResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0628541, 0.199029 )
-visible = false
-light_energy = 2.0
-omni_range = 4.42
-omni_attenuation = 3.605
+[node name="Prompt" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03917, 0 )
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 1 )
 unit_db = 9.143
 bus = "SFX"
 attenuation_filter_cutoff_hz = 6651.0
-
-[node name="Lever" parent="." instance=ExtResource( 2 )]
-
-[node name="Lever" parent="Lever" index="1"]
-transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0.0664331 )
-
-[connection signal="input_event" from="Area" to="." method="_on_input_event"]
 
 [editable path="Lever"]

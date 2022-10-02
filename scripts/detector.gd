@@ -32,13 +32,21 @@ func _physics_process(delta):
 func _on_timeout():
 	if not Global.intro:
 		$Sound.play()
+
 		var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
 		tween.tween_property($Light, "light_energy", 5.0, 0.2)
 		yield(get_tree().create_timer(0.5), "timeout")
+
 		for ray in rays:
 			if ray.is_colliding():
 				if ray.get_collider().is_in_group("player"):
-					Global.reset()
-					get_tree().reload_current_scene()
+					if not ray.get_collider().barrel_mode:
+						Global.reset()
+						get_tree().reload_current_scene()
+					else:
+						if ray.get_collider().velocity.length() > 0.3:
+							Global.reset()
+							get_tree().reload_current_scene()
+
 		tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		tween.tween_property($Light, "light_energy", 0.0, 0.7)
