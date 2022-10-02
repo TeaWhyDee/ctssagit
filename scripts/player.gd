@@ -49,7 +49,7 @@ func _physics_process(delta: float):
 	if direction:
 		$Mesh.rotation.y = lerp_angle($Mesh.rotation.y, Vector2(direction.y, direction.x).angle(), delta * 10)
 
-	if pushing:
+	if pushing and direction:
 		$Mesh/AnimationPlayer.play("push")
 	elif velocity.length() > 3:
 		$Mesh/AnimationPlayer.play("walk", -1, 2)

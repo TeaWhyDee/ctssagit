@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://resources/3d/wall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://audio/sfx/alarm_loop_00.wav" type="AudioStream" id=10]
 [ext_resource path="res://textures/floor.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Barrel.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.635294, 0.635294, 0.635294, 1 )
@@ -23,6 +24,7 @@ uv1_triplanar = true
 background_mode = 1
 background_energy = 0.0
 ambient_light_color = Color( 0.356863, 0.356863, 0.356863, 1 )
+ambient_light_energy = 1.5
 ambient_light_sky_contribution = 0.0
 fog_enabled = true
 fog_color = Color( 0.352941, 0.258824, 0.54902, 1 )
@@ -42,7 +44,7 @@ glow_high_quality = true
 [node name="World" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00651, 0.5, -3.07803 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0526, 0.5, -16.7305 )
 
 [node name="Camera" parent="Player" index="2"]
 current = false
@@ -316,15 +318,6 @@ spot_range = 17.6309
 spot_angle = 14.42
 spot_angle_attenuation = 0.176777
 
-[node name="SpotLight6" type="SpotLight" parent="Lights"]
-transform = Transform( 0.802246, -0.551437, 0.228732, -0.0286157, 0.34718, 0.937362, -0.596307, -0.75854, 0.262744, 1.68749, 13.845, 2.95911 )
-light_energy = 4.0
-shadow_enabled = true
-shadow_bias = 0.05
-spot_range = 17.6309
-spot_angle = 33.234
-spot_angle_attenuation = 0.176777
-
 [node name="SpotLight2" type="SpotLight" parent="Lights"]
 transform = Transform( 0.911855, 1.7944e-08, -0.410512, 0.410512, -3.98585e-08, 0.911855, 0, -1, -4.37114e-08, 0.485249, 13.845, -12.0155 )
 light_energy = 2.0
@@ -362,6 +355,15 @@ spot_range = 17.0266
 spot_angle = 11.5499
 spot_angle_attenuation = 0.31864
 
+[node name="SpotLight6" type="SpotLight" parent="Lights"]
+transform = Transform( 0.802246, -0.551437, 0.228732, -0.0286157, 0.34718, 0.937362, -0.596307, -0.75854, 0.262744, 1.68749, 13.845, 2.95911 )
+light_energy = 4.0
+shadow_enabled = true
+shadow_bias = 0.05
+spot_range = 17.6309
+spot_angle = 33.234
+spot_angle_attenuation = 0.176777
+
 [node name="Interactibles" type="Spatial" parent="."]
 
 [node name="Button" parent="Interactibles" instance=ExtResource( 5 )]
@@ -377,6 +379,9 @@ activator = NodePath("../Button")
 [node name="Door2" parent="Interactibles" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -0.0103495, 2.28769, -10.0117 )
 activator = NodePath("../Button2")
+
+[node name="Barrel" parent="Interactibles" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.9879, 0.7, -22.2176 )
 
 [node name="AlarmActivator" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5129, 12.1219, -13.743 )
