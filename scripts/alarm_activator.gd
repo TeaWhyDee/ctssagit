@@ -12,4 +12,5 @@ func _on_activated():
 	alarm.play()
 	get_parent().get_node("AudioStreamPlayer").play()
 	var tween = create_tween()
-	tween.tween_property(alarm, "unit_db", -50.0, 10).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(alarm, "unit_db", -2.0, 0.7).set_ease(Tween.EASE_OUT)
+	tween.tween_property(alarm, "unit_db", -70.0, 20).set_ease(Tween.EASE_IN_OUT)

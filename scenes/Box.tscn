@@ -22,3 +22,5 @@ unit_db = -80.0
 autoplay = true
 bus = "SFX"
 attenuation_filter_cutoff_hz = 7217.0
+
+[editable path="box"]

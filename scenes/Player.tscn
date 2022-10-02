@@ -6,7 +6,7 @@
 
 [sub_resource type="CylinderShape" id=1]
 height = 2.00813
-radius = 0.515
+radius = 0.387188
 
 [sub_resource type="Shader" id=4]
 code = "/*
@@ -74,7 +74,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519551, 0 )
 shape = SubResource( 1 )
 
 [node name="Mesh" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, 0, -0.479464, 0 )
+transform = Transform( -1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, -0.479464, 0 )
 
 [node name="SpotLight" type="SpotLight" parent="Mesh/rig001/Skeleton/eyes" index="0"]
 transform = Transform( -0.666667, 0, -5.82819e-08, 0, 0.666667, 0, 5.82819e-08, 0, -0.666667, 0.107484, 1.20963, 0.0751646 )
@@ -91,7 +91,7 @@ spot_attenuation = 2.21914
 spot_angle = 39.67
 
 [node name="AnimationPlayer" parent="Mesh" index="1"]
-playback_default_blend_time = 0.1
+playback_default_blend_time = 0.2
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0 )
