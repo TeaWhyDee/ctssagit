@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Prompt.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.36693, 1.57372, 1.4265 )
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.400386, 0.338669, 0.252298 )
