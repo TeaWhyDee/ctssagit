@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/alarm_activator.gd" type="Script" id=7]
+[ext_resource path="res://blender/house.glb" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.188235, 0.694118, 0.858824, 1 )
@@ -18,6 +19,7 @@ albedo_color = Color( 0.152941, 0.458824, 0.560784, 1 )
 background_color = Color( 1, 1, 1, 1 )
 background_energy = 0.0
 ambient_light_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+ambient_light_energy = 8.84
 ambient_light_sky_contribution = 0.0
 fog_enabled = true
 fog_color = Color( 0.352941, 0.258824, 0.54902, 1 )
@@ -38,7 +40,7 @@ glow_high_quality = true
 [node name="World" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9982, 0.190414, -13.9919 )
 
 [node name="Map" type="Spatial" parent="."]
 
@@ -62,14 +64,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.37411 )
 use_collision = true
 width = 125.629
 height = 34.7582
-depth = 2.01865
-material = SubResource( 2 )
-
-[node name="CSGBox14" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9561, 5.36658, -3.30284 )
-use_collision = true
-width = 17.4084
-height = 19.2399
 depth = 2.01865
 material = SubResource( 2 )
 
@@ -105,20 +99,15 @@ height = 0.612643
 depth = 0.646075
 material = SubResource( 2 )
 
+[node name="house" parent="Map/CSGBox22" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1928, -8.10565, -4.46292 )
+
 [node name="CSGBox23" type="CSGBox" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 9.38515, -10.0556 )
 use_collision = true
 width = 9.63237
 height = 0.612643
 depth = 0.646075
-material = SubResource( 2 )
-
-[node name="CSGBox18" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90182, 5.51775, -10.0556 )
-use_collision = true
-width = 3.11212
-height = 11.6746
-depth = 0.6
 material = SubResource( 2 )
 
 [node name="CSGBox19" type="CSGBox" parent="Map"]
@@ -134,22 +123,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9415, 6.08949, -26.9818 )
 use_collision = true
 width = 41.4082
 height = 17.325
-depth = 2.01865
-material = SubResource( 2 )
-
-[node name="CSGBox6" type="CSGBox" parent="Map"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.37524, 5.79132, -8.25317 )
-use_collision = true
-width = 36.2079
-height = 20.6378
-depth = 2.01865
-material = SubResource( 2 )
-
-[node name="CSGBox24" type="CSGBox" parent="Map"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.46897, 5.79132, -17.5869 )
-use_collision = true
-width = 14.7459
-height = 20.6378
 depth = 2.01865
 material = SubResource( 2 )
 
@@ -169,36 +142,12 @@ height = 25.7814
 depth = 0.631706
 material = SubResource( 2 )
 
-[node name="CSGBox9" type="CSGBox" parent="Map"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.6008, 12.1191, -5.62615 )
-use_collision = true
-width = 17.3368
-height = 25.7814
-depth = 0.631706
-material = SubResource( 2 )
-
-[node name="CSGBox25" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3917, 2.91616, -9.22162 )
-use_collision = true
-width = 5.89776
-height = 10.7876
-depth = 5.12175
-material = SubResource( 2 )
-
 [node name="CSGBox27" type="CSGBox" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1011, 2.65837, -10.893 )
 use_collision = true
 width = 5.89776
 height = 5.83615
 depth = 5.12175
-material = SubResource( 2 )
-
-[node name="CSGBox10" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0639526, 1.35196, -14.1907 )
-use_collision = true
-width = 21.6005
-height = 8.59423
-depth = 1.66363
 material = SubResource( 2 )
 
 [node name="Boxes" type="Spatial" parent="."]
