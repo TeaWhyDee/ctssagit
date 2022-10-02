@@ -27,9 +27,11 @@ func _physics_process(delta):
 		ray2.cast_to = dir_l * dist
 		ray3.cast_to = dir_r * dist
 		$SpotLight.light_energy = Global.timer / 10 * 2
+		#$Buzzing.unit_db = (Global.timer - Global.TIMEOUT) * 8 + 40
 
 func _on_timeout():
 	if not Global.intro:
+		$Sound.play()
 		var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
 		tween.tween_property($Light, "light_energy", 5.0, 0.2)
 		yield(get_tree().create_timer(0.5), "timeout")
