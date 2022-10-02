@@ -1,10 +1,12 @@
 extends StaticBody
 
+export var interactive: bool = true
 export(NodePath) var activator
 
 func _ready():
 	$OmniLight.set_as_toplevel(true)
-	get_node(activator).connect("activated", self, "_on_activated")
+	if interactive:
+		get_node(activator).connect("activated", self, "_on_activated")
 
 func _on_activated():
 	$Sound.play()

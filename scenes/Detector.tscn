@@ -53,6 +53,7 @@ spot_angle_attenuation = 1.41421
 light_color = Color( 1, 0.392157, 0.552941, 1 )
 shadow_enabled = true
 shadow_bias = 0.01
+shadow_reverse_cull_face = true
 spot_range = 330.005
 spot_attenuation = 0.901251
 spot_angle = 10.35
@@ -64,6 +65,6 @@ unit_db = 8.0
 unit_size = 0.6
 max_distance = 70.0
 bus = "SFX"
-attenuation_filter_cutoff_hz = 9830.0
+attenuation_filter_cutoff_hz = 9189.0
 
 [editable path="Mesh"]
