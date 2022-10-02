@@ -29,6 +29,6 @@ shape = SubResource( 2 )
 
 [node name="Prompt" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.720645, 0 )
-appear_distance = 3.0
+appear_distance = 2.0
 
 [editable path="Mesh"]
