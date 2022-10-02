@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/alarm_activator.gd" type="Script" id=7]
-[ext_resource path="res://blender/house.glb" type="PackedScene" id=8]
+[ext_resource path="res://scenes/house1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.188235, 0.694118, 0.858824, 1 )
@@ -45,7 +45,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9982, 0.190414, -13.9919 )
 [node name="Map" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.663, -1, -6.54789 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6837, -0.958372, -6.57989 )
 use_collision = true
 width = 104.485
 depth = 40.146
@@ -98,9 +98,6 @@ width = 9.63237
 height = 0.612643
 depth = 0.646075
 material = SubResource( 2 )
-
-[node name="house" parent="Map/CSGBox22" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1928, -8.10565, -4.46292 )
 
 [node name="CSGBox23" type="CSGBox" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 9.38515, -10.0556 )
@@ -217,3 +214,6 @@ activator = NodePath("../Button2")
 [node name="AlarmActivator" type="Spatial" parent="."]
 script = ExtResource( 7 )
 button = NodePath("../Button")
+
+[node name="house" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4987, 0.247245, -15.5864 )
