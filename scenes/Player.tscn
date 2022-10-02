@@ -7,7 +7,7 @@
 
 [sub_resource type="CylinderShape" id=1]
 height = 2.00813
-radius = 0.387188
+radius = 0.515
 
 [sub_resource type="Shader" id=4]
 code = "/*
