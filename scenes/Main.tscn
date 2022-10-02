@@ -32,7 +32,6 @@ fog_depth_end = 84.3
 fog_transmit_enabled = true
 tonemap_mode = 3
 tonemap_white = 1.2
-ss_reflections_enabled = true
 ssao_enabled = true
 ssao_radius = 0.59
 ssao_intensity = 1.41

@@ -8,6 +8,7 @@ var barrel_player: AudioStreamPlayer3D
 
 func _ready():
 	get_parent().connect("barreled", self, "_on_barreled")
+	get_parent().connect("unbarreled", self, "_on_unbarreled")
 
 func _process(delta: float):
 	if not get_parent().barrel_mode:
@@ -41,3 +42,6 @@ func _on_barreled():
 	barrel_player.bus = "SFX"
 	barrel_player.autoplay = true
 	add_child(barrel_player)
+
+func _on_unbarreled():
+	barrel_player.queue_free()

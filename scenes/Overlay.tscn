@@ -3,6 +3,34 @@
 [ext_resource path="res://scripts/hud.gd" type="Script" id=1]
 [ext_resource path="res://textures/clock.png" type="Texture" id=2]
 
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform int pixelSize = 4;
+
+void fragment()
+{
+	
+	ivec2 size = textureSize(SCREEN_TEXTURE, 0);
+	
+	int xRes = size.x;
+	int yRes = size.y;
+	
+	float xFactor = float(xRes) / float(pixelSize);
+	float yFactor = float(yRes) / float(pixelSize);
+	
+	float grid_uv_x = round(SCREEN_UV.x * xFactor) / xFactor;
+	float grid_uv_y = round(SCREEN_UV.y * yFactor) / yFactor;
+	
+	vec4 text = texture(SCREEN_TEXTURE, vec2(grid_uv_x, grid_uv_y));
+	
+	COLOR = text;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/pixelSize = 4
+
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
 
@@ -127,32 +155,6 @@ shader_param/aberration_amount = 3.0
 shader_param/static_intensity = 10.0
 shader_param/time_scale = 1.0
 
-[sub_resource type="Shader" id=1]
-code = "// chromatic aberration
-//---------------------------------
-
-shader_type canvas_item;
-
-uniform vec2 r_displacement = vec2(3.0, 0.0);
-uniform vec2 g_displacement = vec2(0.0, 0.0);
-uniform vec2 b_displacement = vec2(-3.0, 0.0);
-
-
-void fragment()
-{
-	float r = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*r_displacement), 0.0).r;
-	float g = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*g_displacement), 0.0).g;
-	float b = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*b_displacement), 0.0).b;
-	
-	COLOR = vec4(r, g, b, 1.0);
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/r_displacement = Vector2( 2, 0 )
-shader_param/g_displacement = Vector2( 0, 0 )
-shader_param/b_displacement = Vector2( -2, 0 )
-
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 
@@ -217,21 +219,21 @@ margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="BackBufferCopy3" type="BackBufferCopy" parent="HUD"]
-rect = Rect2( 0, 0, 1920, 1080 )
-
-[node name="CRT" type="ColorRect" parent="HUD/BackBufferCopy3"]
-material = SubResource( 6 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD"]
 visible = false
 rect = Rect2( 0, 0, 1920, 1080 )
 
 [node name="CA" type="ColorRect" parent="HUD/BackBufferCopy"]
 material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="HUD"]
+rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="CRT" type="ColorRect" parent="HUD/BackBufferCopy3"]
+material = SubResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

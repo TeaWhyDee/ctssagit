@@ -1,6 +1,7 @@
 extends KinematicBody
 
 signal barreled
+signal unbarreled
 const SPEED = 6
 const BARREL_SPEED = 9
 const INERTIA = 3
@@ -10,6 +11,7 @@ var pushing: bool
 var pushing_speed: float
 var pushing_timer: float
 var barrel_mode: bool
+var barrel_timeout: float = 0.1
 onready var camera_init_pos = $Camera.translation
 onready var camera_init_fov = $Camera.fov
 
@@ -33,6 +35,8 @@ func _physics_process(delta: float):
 			velocity = velocity.linear_interpolate(Vector3(direction.x, 0, direction.y) * SPEED, delta * 10)
 	else:
 		velocity = velocity.linear_interpolate(Vector3(direction.x, 0, direction.y) * BARREL_SPEED, delta)
+		if barrel_timeout > 0:
+			barrel_timeout -= delta
 	velocity = move_and_slide(velocity, Vector3.UP, false, 4, PI / 4, false)
 
 	var pushed = false
@@ -62,13 +66,27 @@ func _physics_process(delta: float):
 	else:
 		$Mesh/AnimationPlayer.play("idle")
 
+func _input(event):
+	if event.is_action_pressed("action"):
+		if barrel_mode and barrel_timeout <= 0:
+			unbarrel()
+
 func hide_in_barrel():
 	$Mesh.hide()
 	$CollisionShape.disabled = true
 	$BarrelMesh.show()
 	$BarrelCollisionShape.disabled = false
 	barrel_mode = true
+	barrel_timeout = 0.1
 	emit_signal("barreled")
+
+func unbarrel():
+	$Mesh.show()
+	$CollisionShape.disabled = false
+	$BarrelMesh.hide()
+	$BarrelCollisionShape.disabled = true
+	barrel_mode = false
+	emit_signal("unbarreled")
 
 func _on_timeout():
 	if not Global.intro:
