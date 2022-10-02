@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/alarm_activator.gd" type="Script" id=7]
 [ext_resource path="res://scenes/ElectricPlate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://resources/3d/wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://audio/sfx/alarm_loop_00.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.188235, 0.694118, 0.858824, 1 )
@@ -40,15 +41,22 @@ glow_high_quality = true
 [node name="World" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3115, 0.5, -13.2147 )
+
+[node name="Alarm" type="AudioStreamPlayer3D" parent="Player/Camera" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.53674e-07, 6 )
+stream = ExtResource( 10 )
+unit_size = 5.0
+bus = "SFX"
+emission_angle_degrees = 21.0
 
 [node name="Map" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.663, -1, -6.54789 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.663, -1, -24.8764 )
 use_collision = true
 width = 104.485
-depth = 40.146
+depth = 75.9322
 material = SubResource( 3 )
 
 [node name="CSGBox3" type="CSGBox" parent="Map"]
@@ -75,51 +83,11 @@ height = 19.2399
 depth = 2.01865
 material = SubResource( 2 )
 
-[node name="CSGBox15" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 15.7162, -10.0556 )
-use_collision = true
-width = 9.63237
-height = 9.44444
-depth = 0.646075
-material = SubResource( 2 )
-
 [node name="CSGBox16" type="CSGBox" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 5.14034, -10.0556 )
 use_collision = true
 width = 9.63237
 height = 1.1095
-depth = 0.646075
-material = SubResource( 2 )
-
-[node name="CSGBox20" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 6.355, -10.0556 )
-use_collision = true
-width = 9.63237
-height = 0.612643
-depth = 0.646075
-material = SubResource( 2 )
-
-[node name="CSGBox21" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 7.3445, -10.0556 )
-use_collision = true
-width = 9.63237
-height = 0.612643
-depth = 0.646075
-material = SubResource( 2 )
-
-[node name="CSGBox22" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 8.3589, -10.0556 )
-use_collision = true
-width = 9.63237
-height = 0.612643
-depth = 0.646075
-material = SubResource( 2 )
-
-[node name="CSGBox23" type="CSGBox" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157787, 9.38515, -10.0556 )
-use_collision = true
-width = 9.63237
-height = 0.612643
 depth = 0.646075
 material = SubResource( 2 )
 
@@ -223,8 +191,17 @@ material = SubResource( 2 )
 [node name="wall" parent="Map" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3156, 0.0172834, -12.2478 )
 
+[node name="wall3" parent="Map" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 14.2756, 0.0172853, -49.0609 )
+
+[node name="wall4" parent="Map" instance=ExtResource( 9 )]
+transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 9.3865, 0.0172863, -35.9051 )
+
 [node name="wall2" parent="Map" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36.1459, 0.0172834, -11.9389 )
+
+[node name="wall5" parent="Map" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.8626, 0.0172834, -20.765 )
 
 [node name="Boxes" type="Spatial" parent="."]
 
@@ -237,12 +214,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2865, 1, -5.46735 )
 [node name="Detectors" type="Spatial" parent="."]
 
 [node name="Detector2" parent="Detectors" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.3605, 2.89857, -15.6995 )
+transform = Transform( -0.450737, 0, 0.892657, 0, 1, 0, -0.892657, 0, -0.450737, 29.3605, 2.89857, -15.6995 )
 
 [node name="Lights" type="Spatial" parent="."]
 
 [node name="SpotLight" type="SpotLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 0.200821, 0.979628, 0, -0.979628, 0.200821, -0.0767237, 13.845, 2.7236 )
+transform = Transform( 0.982707, 0.181397, -0.0371859, -0.0286157, 0.34718, 0.937362, 0.182945, -0.920088, 0.346367, 1.42926, 13.845, -5.32471 )
 light_color = Color( 0.85098, 0, 1, 1 )
 light_energy = 2.0
 shadow_enabled = true
@@ -260,6 +237,16 @@ spot_range = 17.0266
 spot_angle = 11.5499
 spot_angle_attenuation = 0.31864
 
+[node name="SpotLight3" type="SpotLight" parent="Lights"]
+transform = Transform( 0.955706, 0.285806, -0.0702959, 0, 0.238838, 0.971059, 0.294324, -0.928047, 0.228259, 24.0122, 14.5664, -21.6064 )
+light_energy = 2.0
+shadow_enabled = true
+shadow_bias = 0.05
+spot_range = 17.0266
+spot_attenuation = 1.56917
+spot_angle = 17.7659
+spot_angle_attenuation = 0.757858
+
 [node name="SpotLight4" type="SpotLight" parent="Lights"]
 transform = Transform( 0.911855, 1.7944e-08, -0.410512, 0.410512, -3.98585e-08, 0.911855, 0, -1, -4.37114e-08, 7.20943, 13.845, -5.51034 )
 light_energy = 2.0
@@ -269,6 +256,27 @@ spot_range = 17.0266
 spot_angle = 11.5499
 spot_angle_attenuation = 0.31864
 
+[node name="Interactibles" type="Spatial" parent="."]
+
+[node name="Button" parent="Interactibles" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.1382, 2.48417, -13.4599 )
+
+[node name="Button2" parent="Interactibles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57159, 2.73987, -9.60262 )
+
+[node name="Door" parent="Interactibles" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.5556, 2.20812, -15.7037 )
+activator = NodePath("../Button")
+
+[node name="Door2" parent="Interactibles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -0.0103495, 2.28769, -10.0117 )
+activator = NodePath("../Button2")
+
+[node name="AlarmActivator" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5129, 12.1219, -13.743 )
+script = ExtResource( 7 )
+button = NodePath("../Interactibles/Button")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
@@ -276,23 +284,8 @@ environment = SubResource( 1 )
 stream = ExtResource( 4 )
 bus = "Music"
 
-[node name="Button" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.1382, 2.48417, -13.4599 )
-
-[node name="Button2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57159, 2.73987, -9.60262 )
-
-[node name="Door" parent="." instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.5556, 2.20812, -15.7037 )
-activator = NodePath("../Button")
-
-[node name="Door2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -0.0103495, 2.28769, -10.0117 )
-activator = NodePath("../Button2")
-
-[node name="AlarmActivator" type="Spatial" parent="."]
-script = ExtResource( 7 )
-button = NodePath("../Button")
-
 [node name="ElectricPlate" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46353, 0.1, -5.67867 )
+
+[editable path="Player"]
+[editable path="Player/Mesh"]

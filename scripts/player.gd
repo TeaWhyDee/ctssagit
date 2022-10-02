@@ -12,6 +12,8 @@ onready var camera_init_fov = $Camera.fov
 
 func _ready():
 	$Camera.set_as_toplevel(true)
+	$Mesh/AnimationPlayer.set_blend_time("idle", "walk", 0.2)
+	$Mesh/AnimationPlayer.set_blend_time("walk", "idle", 0.3)
 	Global.connect("timeout", self, "_on_timeout")
 
 func _physics_process(delta: float):

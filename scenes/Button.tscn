@@ -23,6 +23,7 @@ shape = SubResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0628541, 0.199029 )
+visible = false
 light_energy = 2.0
 omni_range = 4.42
 omni_attenuation = 3.605
@@ -34,6 +35,9 @@ bus = "SFX"
 attenuation_filter_cutoff_hz = 6651.0
 
 [node name="Lever" parent="." instance=ExtResource( 2 )]
+
+[node name="Lever" parent="Lever" index="1"]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0.0664331 )
 
 [connection signal="input_event" from="Area" to="." method="_on_input_event"]
 

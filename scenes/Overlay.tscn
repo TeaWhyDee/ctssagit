@@ -1,0 +1,247 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/hud.gd" type="Script" id=1]
+[ext_resource path="res://textures/clock.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform bool scanlines_shown = true;
+uniform bool curvature_shown = true;
+uniform bool warp_shown = false;
+uniform float aberration_amount = 3.0;
+uniform float static_intensity = 10.0;
+uniform float time_scale = 1.0;
+const float warp_amount = 0.7;
+const float scanlines_opacity = 0.05;
+const float scanlines_amount = 100.0;
+const float scanlines_speed = 0.05;
+const float scanlines_width = 0.3;
+const float bloom_threshold = 0.15;
+const float bloom_strength = 1.5;
+const float bloom_size = 4.0;
+const float vignette_opacity = 0.7;
+
+vec2 curve(vec2 uv){
+	vec2 delta = uv - 0.5;
+	float delta2 = dot(delta.xy, delta.xy);
+	float delta4 = delta2 * delta2;
+	float delta_offset = delta4 * warp_amount;
+	
+	return uv + delta * delta_offset;
+}
+
+vec2 warp(vec2 uv, float time) {
+	float mask = smoothstep(0.0, 0.9, 0.5 - length(vec2(uv.x - uv.y) / 1.0 - tan(time / 5.0) * 5.0));
+	return uv - uv * mask;
+}
+
+vec3 aberration(sampler2D screen_texture, vec2 uv, vec2 resolution) {
+	float horizontal = aberration_amount / resolution.x;
+	vec3 color;
+	color.r = texture(screen_texture, vec2(uv.x - horizontal, uv.y)).r;
+	color.b = texture(screen_texture, vec2(uv.x - horizontal, uv.y)).b;
+	color.g = texture(screen_texture, uv).g;
+	return color;
+}
+
+vec3 bloom(sampler2D screen_texture, vec2 uv) {
+	vec3 blur = textureLod(screen_texture, uv, bloom_size).rgb;
+	return max((blur - bloom_threshold) * bloom_strength, 0.0);
+}
+
+vec2 random(vec2 uv) {
+    uv = vec2(dot(uv, vec2(127.1,311.7)), dot(uv, vec2(269.5,183.3)));
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix(mix(dot(random(uv_index + vec2(0.0, 0.0)), uv_fract - vec2(0.0, 0.0)),
+                     dot(random(uv_index + vec2(1.0, 0.0)), uv_fract - vec2(1.0, 0.0)), blur.x),
+                mix(dot(random(uv_index + vec2(0.0, 1.0)), uv_fract - vec2(0.0, 1.0)),
+                     dot(random(uv_index + vec2(1.0, 1.0)), uv_fract - vec2(1.0, 1.0)), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+float static(sampler2D texture, vec2 uv, vec2 resolution, float time) {
+	float noise = smoothstep(0.4, 0.5, noise(uv * vec2(2.0, 200.0) + vec2(10.0, time)));
+	vec3 color = texture(texture, uv).rgb;
+	color = clamp(color, vec3(0.0), vec3(1.0));
+	return clamp(random((ceil(uv * resolution) / resolution) + fract(time)).x, 0.0, 1.0) * static_intensity;
+}
+
+float vignette(vec2 uv, vec2 resolution) {
+	float vignette = uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y);
+	return clamp(pow((resolution.x / 4.0) * vignette, vignette_opacity), 0.0, 1.0);
+}
+
+vec3 scanlines(vec2 uv, vec3 color, float time) {
+	float scanlines = smoothstep(scanlines_width, scanlines_width + 0.5, 
+	abs(sin((uv.y + time * scanlines_speed) * scanlines_amount * 3.14)));
+
+	return mix(color, color * vec3(scanlines), scanlines_opacity);
+}
+
+void fragment() {
+	float time = TIME / time_scale;
+
+	vec2 uv;
+	if (warp_shown) {
+		uv = warp(SCREEN_UV, time);
+	}
+	else {
+		uv = SCREEN_UV;
+	}
+	if (curvature_shown) {
+		uv = curve(uv);
+	}
+
+	vec2 resolution = 1.0 / SCREEN_PIXEL_SIZE;
+	
+	vec3 color = aberration(SCREEN_TEXTURE, uv, resolution);
+//	color += bloom(SCREEN_TEXTURE, uv);
+//	color += static(SCREEN_TEXTURE, uv, resolution, time);
+	color *= vignette(uv, resolution);
+
+	if (scanlines_shown) {
+		color = scanlines(uv, color, time);
+	}
+
+	if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
+		color = vec3(0.0, 0.0, 0.0);
+	}
+
+	COLOR.rgb = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/scanlines_shown = true
+shader_param/curvature_shown = false
+shader_param/warp_shown = false
+shader_param/aberration_amount = 3.0
+shader_param/static_intensity = 10.0
+shader_param/time_scale = 1.0
+
+[sub_resource type="Shader" id=1]
+code = "// chromatic aberration
+//---------------------------------
+
+shader_type canvas_item;
+
+uniform vec2 r_displacement = vec2(3.0, 0.0);
+uniform vec2 g_displacement = vec2(0.0, 0.0);
+uniform vec2 b_displacement = vec2(-3.0, 0.0);
+
+
+void fragment()
+{
+	float r = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*r_displacement), 0.0).r;
+	float g = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*g_displacement), 0.0).g;
+	float b = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*b_displacement), 0.0).b;
+	
+	COLOR = vec4(r, g, b, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/r_displacement = Vector2( 2, 0 )
+shader_param/g_displacement = Vector2( 0, 0 )
+shader_param/b_displacement = Vector2( -2, 0 )
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform float vignette_intensity = 0.4;
+uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.5;
+uniform vec4 vignette_rgb : hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+
+float vignette(vec2 uv){
+	uv *= 1.0 - uv.xy;
+	float vignette = uv.x * uv.y * 15.0;
+	return pow(vignette, vignette_intensity * vignette_opacity);
+}
+
+void fragment(){
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV);
+	vec4 text = texture(TEXTURE, UV);
+	
+	text.rgba *= (vignette_rgb.rgba);
+	text.rgba *= (1.0 - vignette(UV));
+	
+	COLOR = vec4((text.rgb)*color.rgb,text.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/vignette_intensity = 0.395
+shader_param/vignette_opacity = 1.0
+shader_param/vignette_rgb = Color( 0, 0, 0, 1 )
+
+[node name="Overlay" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 137.0
+margin_top = 126.0
+margin_right = -1619.0
+margin_bottom = -795.0
+mouse_filter = 2
+
+[node name="HUD" type="Control" parent="HUD/CenterContainer"]
+margin_left = 82.0
+margin_top = 79.0
+margin_right = 82.0
+margin_bottom = 79.0
+mouse_filter = 2
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD/CenterContainer/HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="HUD"]
+rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="CRT" type="ColorRect" parent="HUD/BackBufferCopy3"]
+material = SubResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="HUD"]
+visible = false
+rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="CA" type="ColorRect" parent="HUD/BackBufferCopy"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="HUD"]
+visible = false
+rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="Vignette" type="ColorRect" parent="HUD/BackBufferCopy2"]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
