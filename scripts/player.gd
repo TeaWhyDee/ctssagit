@@ -37,6 +37,7 @@ func _physics_process(delta: float):
 		velocity = velocity.linear_interpolate(Vector3(direction.x, 0, direction.y) * BARREL_SPEED, delta)
 		if barrel_timeout > 0:
 			barrel_timeout -= delta
+		$BarrelMesh.rotate_x(-velocity.length() / 60)
 	velocity = move_and_slide(velocity, Vector3.UP, false, 4, PI / 4, false)
 
 	var pushed = false
