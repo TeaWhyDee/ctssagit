@@ -4,6 +4,7 @@ export(NodePath) var button
 
 func _ready():
 	get_node(button).connect("activated", self, "_on_activated")
+	_on_activated()
 
 func _on_activated():
 	Global.timer = 0
