@@ -90,7 +90,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/filters/sharpen_intensity=0.501
-quality/shadows/filter_mode=2
+quality/filters/sharpen_intensity=1.0
+quality/shadows/filter_mode=0
 quality/filters/msaa=1
 quality/filters/use_fxaa=true
