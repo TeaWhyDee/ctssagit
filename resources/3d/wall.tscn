@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/3d/Material_001.material" type="Material" id=1]
 
@@ -29,6 +29,12 @@ points = PoolVector3Array( 0.975019, 6.63877, -0.911088, -0.002782, -1.5758, -1.
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -11.1511, 6.05178, 23.3424, -0.982095, 1.94574, 16.3031, -0.982095, -0.988467, 16.3031, -11.7373, 2.14119, 26.6679, -13.3029, -0.988467, 25.298, -1.37289, 0.185048, 14.3476, -0.982095, 7.02985, 16.1071, -11.7373, 7.02985, 26.277, -0.982095, 7.22614, 14.5424, -11.7373, -0.988467, 26.4718, -12.9109, 7.22529, 25.298, -4.11085, -1.18391, 16.694, -2.15568, 5.4646, 17.6718, -4.30624, 6.8344, 17.0849, -8.21778, -0.205843, 23.5372, -11.3465, 6.63896, 26.277, -13.3029, 3.31386, 25.8849, -3.72005, -1.3802, 16.4992, -0.982095, -0.988467, 14.5424, -1.17749, 4.29193, 14.1503, -11.3465, 7.22529, 25.8849, -2.74187, -0.402131, 18.2587, -5.08903, 5.07455, 17.6718, -12.3247, 0.380493, 24.3202, -9.58676, -0.988467, 24.7111, -12.3247, 6.83356, 24.5162, -5.28443, 7.02985, 20.4091, -2.15568, 7.22614, 17.0849, -12.1293, 2.14119, 26.6679, -10.173, 3.11757, 25.298, -10.565, 7.22529, 22.9503, -11.9339, 5.66089, 26.4718, -13.3029, 3.70475, 25.494, -6.26262, 6.8344, 18.8444, -12.7014, -0.846382, 25.8749, -1.96028, 0.575938, 17.4757, -9.97756, -0.792179, 25.1032, -1.56828, -0.988467, 14.7384, -0.982095, 4.09648, 14.1503, -11.7373, 1.16312, 26.6679, -12.1231, 7.05791, 26.0487, -11.9339, 6.83356, 24.1241, -11.3465, 7.02985, 26.0809, -5.28443, 7.22614, 18.2587 )
 
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.948013, 4.03948, 14.2116 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.948013, 4.03948, 9.05432 )
+
 [node name="wall" type="StaticBody"]
 
 [node name="wall001" type="MeshInstance" parent="."]
@@ -37,9 +43,20 @@ material/0 = SubResource( 5 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="."]
 shape = SubResource( 4 )
+disabled = true
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 shape = SubResource( 2 )
+disabled = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205839, 3.0533, 0 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="."]
+transform = Transform( 0.669157, 0, -0.743122, 0, 1, 0, 0.743122, 0, 0.669157, -6.18026, 3.0533, 19.5508 )
+shape = SubResource( 7 )
