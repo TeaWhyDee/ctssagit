@@ -1,12 +1,15 @@
 extends KinematicBody
 
+signal barreled
 const SPEED = 6
+const BARREL_SPEED = 9
 const INERTIA = 3
 var direction: Vector2
 var velocity: Vector3
 var pushing: bool
 var pushing_speed: float
 var pushing_timer: float
+var barrel_mode: bool
 onready var camera_init_pos = $Camera.translation
 onready var camera_init_fov = $Camera.fov
 
@@ -21,12 +24,15 @@ func _ready():
 func _physics_process(delta: float):
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	direction = input_vector
-	if pushing:
-		pushing_speed = lerp(pushing_speed, INERTIA, delta * 5)
-		velocity = Vector3(direction.x, 0, direction.y) * pushing_speed
+	if not barrel_mode:
+		if pushing:
+			pushing_speed = lerp(pushing_speed, INERTIA, delta * 5)
+			velocity = Vector3(direction.x, 0, direction.y) * pushing_speed
+		else:
+			pushing_speed = lerp(pushing_speed, 0, delta * 10)
+			velocity = velocity.linear_interpolate(Vector3(direction.x, 0, direction.y) * SPEED, delta * 10)
 	else:
-		pushing_speed = lerp(pushing_speed, 0, delta * 10)
-		velocity = velocity.linear_interpolate(Vector3(direction.x, 0, direction.y) * SPEED, delta * 10)
+		velocity = velocity.linear_interpolate(Vector3(direction.x, 0, direction.y) * BARREL_SPEED, delta)
 	velocity = move_and_slide(velocity, Vector3.UP, false, 4, PI / 4, false)
 
 	var pushed = false
@@ -47,7 +53,7 @@ func _physics_process(delta: float):
 	
 	$Camera.transform.origin = $Camera.transform.origin.linear_interpolate(transform.origin + camera_init_pos, delta * 15)
 	if direction:
-		$Mesh.rotation.y = lerp_angle($Mesh.rotation.y, Vector2(direction.y, direction.x).angle(), delta * 10)
+		rotation.y = lerp_angle(rotation.y, Vector2(-direction.y, -direction.x).angle(), delta * 10)
 
 	if pushing and direction:
 		$Mesh/AnimationPlayer.play("push")
@@ -55,6 +61,14 @@ func _physics_process(delta: float):
 		$Mesh/AnimationPlayer.play("walk", -1, 2)
 	else:
 		$Mesh/AnimationPlayer.play("idle")
+
+func hide_in_barrel():
+	$Mesh.hide()
+	$CollisionShape.disabled = true
+	$BarrelMesh.show()
+	$BarrelCollisionShape.disabled = false
+	barrel_mode = true
+	emit_signal("barreled")
 
 func _on_timeout():
 	if not Global.intro:
