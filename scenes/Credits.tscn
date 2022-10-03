@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://misc/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://misc/Righteous-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Credits.gd" type="Script" id=3]
+[ext_resource path="res://video/cutscene2.webm" type="VideoStream" id=4]
+[ext_resource path="res://audio/mus/Credits.ogg" type="AudioStream" id=5]
+[ext_resource path="res://misc/theme.tres" type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("RichTextLabel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("RichTextLabel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "scroll"
+length = 30.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("RichTextLabel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 5, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 29.9 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("RichTextLabel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1000, -0.25, 0, 0.25, 0, -1600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 29.9 )
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 469.0
+margin_top = 74.0
+margin_right = 1453.0
+margin_bottom = 1177.0
+custom_fonts/font = ExtResource( 1 )
+text = "TeaWhyDee
+3D · Level design · Code
+
+Pizzart
+Code · Level Design
+
+EngarrafAudio
+Music · SFX
+
+Sandeia
+3D
+
+Special Thanks
+TwoSpacesSG
+
+Additional Sources
+kyles@Freesound.org"
+align = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 1922.0
+margin_bottom = 2252.0
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]3D modelling[/b]
+TeaWhyDee
+Sandeia
+
+[b]Level design[/b]
+TeaWhyDee
+PizzArt
+
+[b]Code[/b]
+TeaWhyDee
+PizzArt
+
+[b]Music[/b]
+TwoSpaces
+Levi Vilas Boas | EngarrafAudio
+
+[b]SFX[/b]
+Levi Vilas Boas | EngarrafAudio
+
+[b]Additional Sources[/b]
+kyles@Freesound.org
+[/center]"
+text = "
+3D modelling
+TeaWhyDee
+Sandeia
+
+Level design
+TeaWhyDee
+PizzArt
+
+Code
+TeaWhyDee
+PizzArt
+
+Music
+TwoSpaces
+Levi Vilas Boas | EngarrafAudio
+
+SFX
+Levi Vilas Boas | EngarrafAudio
+
+Additional Sources
+kyles@Freesound.org
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/scroll = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 1477.0
+margin_top = 953.0
+margin_right = 1837.0
+margin_bottom = 1024.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 1 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="button_down" from="Quit" to="." method="_on_Quit_button_down"]

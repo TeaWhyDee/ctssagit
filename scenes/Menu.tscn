@@ -89,9 +89,9 @@ custom_constants/margin_left = 100
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 100.0
-margin_top = 268.0
+margin_top = 294.0
 margin_right = 1920.0
-margin_bottom = 812.0
+margin_bottom = 786.0
 size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2"]
@@ -103,7 +103,7 @@ texture = ExtResource( 4 )
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 margin_right = 360.0
-margin_bottom = 544.0
+margin_bottom = 492.0
 rect_min_size = Vector2( 360, 0 )
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -111,7 +111,7 @@ custom_constants/separation = 8
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer2/Buttons"]
 margin_right = 360.0
-margin_bottom = 84.0
+margin_bottom = 71.0
 theme = ExtResource( 2 )
 custom_colors/font_color_focus = Color( 1, 0.972549, 0.278431, 1 )
 custom_colors/font_color = Color( 1, 0.972549, 0.278431, 1 )
@@ -128,9 +128,9 @@ __meta__ = {
 }
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer2/Buttons"]
-margin_top = 92.0
+margin_top = 79.0
 margin_right = 360.0
-margin_bottom = 176.0
+margin_bottom = 163.0
 rect_min_size = Vector2( 0, 84 )
 custom_icons/grabber_disabled = SubResource( 3 )
 custom_icons/grabber_highlight = SubResource( 3 )
@@ -154,9 +154,9 @@ align = 1
 valign = 1
 
 [node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer2/Buttons"]
-margin_top = 184.0
+margin_top = 171.0
 margin_right = 360.0
-margin_bottom = 268.0
+margin_bottom = 255.0
 rect_min_size = Vector2( 0, 84 )
 custom_icons/grabber_disabled = SubResource( 3 )
 custom_icons/grabber_highlight = SubResource( 3 )
@@ -180,9 +180,9 @@ align = 1
 valign = 1
 
 [node name="Scanlines" type="Button" parent="MarginContainer/VBoxContainer2/Buttons"]
-margin_top = 276.0
+margin_top = 263.0
 margin_right = 360.0
-margin_bottom = 360.0
+margin_bottom = 334.0
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
@@ -193,9 +193,9 @@ __meta__ = {
 }
 
 [node name="ColorDist" type="Button" parent="MarginContainer/VBoxContainer2/Buttons"]
-margin_top = 368.0
+margin_top = 342.0
 margin_right = 360.0
-margin_bottom = 452.0
+margin_bottom = 413.0
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
@@ -206,9 +206,9 @@ __meta__ = {
 }
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer2/Buttons"]
-margin_top = 460.0
+margin_top = 421.0
 margin_right = 360.0
-margin_bottom = 544.0
+margin_bottom = 492.0
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 3 )
 text = "QUIT"
