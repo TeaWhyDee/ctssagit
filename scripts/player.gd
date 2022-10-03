@@ -13,6 +13,7 @@ var pushing_timer: float
 var barrel_mode: bool
 var barrel_timeout: float = 0.1
 var sneeze_lock: float
+var keys: int
 export var manholed: bool
 onready var camera_init_pos = $Camera.translation
 onready var camera_init_fov = $Camera.fov
@@ -76,16 +77,12 @@ func _physics_process(delta: float):
 		else:
 			$Mesh/AnimationPlayer.play("idle")
 
-func _input(event):
-	if event.is_action_pressed("action"):
-		if barrel_mode and barrel_timeout <= 0:
-			unbarrel()
-
-func hide_in_barrel():
+func hide_in_barrel(barrel: Spatial):
 	$Mesh.hide()
 	$CollisionShape.disabled = true
 	$BarrelMesh.show()
 	$BarrelCollisionShape.disabled = false
+	global_translation = barrel.global_translation
 	barrel_mode = true
 	barrel_timeout = 0.1
 	emit_signal("barreled")
@@ -95,6 +92,8 @@ func unbarrel():
 	$CollisionShape.disabled = false
 	$BarrelMesh.hide()
 	$BarrelCollisionShape.disabled = true
+	var dir = Vector2(cos(rotation.y), sin(rotation.y))
+	global_translation += Vector3(dir.y, 0, dir.x) * 0.5
 	barrel_mode = false
 	emit_signal("unbarreled")
 
@@ -115,7 +114,7 @@ func unmanhole():
 	manholed = false
 
 func sneeze():
-	$AudioPlayer.play_audio("sneeze", 3, 10)
+	$AudioPlayer.play_audio("sneeze", 2, 10)
 	sneeze_lock = 0.3
 
 func _on_timeout():

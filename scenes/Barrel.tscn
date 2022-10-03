@@ -27,10 +27,3 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Prompt" parent="." instance=ExtResource( 2 )]
-
-[node name="Label3D" type="Label3D" parent="."]
-visible = false
-pixel_size = 0.02
-billboard = 1
-no_depth_test = true
-text = "USE"

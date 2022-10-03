@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sneeze_01.ogg-402a07faea4ac1dd15225cbbecf6916f.oggst
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
