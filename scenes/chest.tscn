@@ -56,6 +56,270 @@ bind/0/name = "Bone"
 bind/0/bone = -1
 bind/0/pose = Transform( 1, 9.2417e-05, -4.33681e-19, 4.03968e-12, -4.37114e-08, 1, 9.2417e-05, -1, -4.37114e-08, -0.682215, 0.462394, 0.588723 )
 
+[sub_resource type="Animation" id=25]
+resource_name = "Cube017"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Cube017")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.0546598, 0.344317, 0.0263387, 0, 0, 0, 1, 1, 1, 1, 3.33333, 1, 0.0546598, 0.344317, 0.0263387, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=26]
+resource_name = "Cylinder"
+length = 3.33333
+
+[sub_resource type="Animation" id=27]
+resource_name = "Cylinder001"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder001")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0204364, 0.184023, 0.0275716, 0, 0, 0, 1, 1, 1, 1, 3.33333, 1, -0.0204364, 0.184023, 0.0275716, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=28]
+resource_name = "Cylinder002"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder002")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0164144, 0.198096, 0.20855, 0.152372, -0.184906, 0.0109919, 0.97081, 1, 1, 1, 3.33333, 1, -0.0164144, 0.198096, 0.20855, 0.152372, -0.184906, 0.0109919, 0.97081, 1, 1, 1 )
+
+[sub_resource type="Animation" id=29]
+resource_name = "Cylinder003"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder003")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.000727942, 0.17539, -0.390863, 0.0164494, -0.0199616, 0.00118663, 0.999665, 0.7934, 0.7934, 0.7934, 3.33333, 1, -0.000727942, 0.17539, -0.390863, 0.0164494, -0.0199616, 0.00118663, 0.999665, 0.7934, 0.7934, 0.7934 )
+
+[sub_resource type="Animation" id=30]
+resource_name = "Cylinder004"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder004")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.224669, 0.239246, -0.166931, -0.0633075, 0.0897202, -0.0543058, 0.992468, 1, 1, 1, 3.33333, 1, 0.224669, 0.239246, -0.166931, -0.0633075, 0.0897202, -0.0543058, 0.992468, 1, 1, 1 )
+
+[sub_resource type="Animation" id=31]
+resource_name = "Cylinder005"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder005")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.205256, 0.226428, 0.334807, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.205256, 0.226428, 0.334807, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=32]
+resource_name = "Cylinder006"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder006")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.229036, 0.212555, -0.250566, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.229036, 0.212555, -0.250566, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=33]
+resource_name = "Cylinder007"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder007")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.34499, 0.166527, 0.447672, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.34499, 0.166527, 0.447672, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=34]
+resource_name = "Cylinder008"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder008")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0602492, 0.259356, -0.121782, -0.0591187, 0.491349, -0.00658403, 0.868929, 0.850552, 0.850552, 0.850552, 3.33333, 1, -0.0602492, 0.259356, -0.121782, -0.0591187, 0.491349, -0.00658403, 0.868929, 0.850552, 0.850552, 0.850552 )
+
+[sub_resource type="Animation" id=35]
+resource_name = "Cylinder009"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder009")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.386343, 0.246538, 0.107727, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.386343, 0.246538, 0.107727, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=36]
+resource_name = "Cylinder010"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder010")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.327684, 0.232665, 0.254146, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.327684, 0.232665, 0.254146, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=37]
+resource_name = "Cylinder011"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder011")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.256246, 0.186637, 0.654156, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.256246, 0.186637, 0.654156, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=38]
+resource_name = "Cylinder012"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder012")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.359207, 0.269719, -0.167469, -0.0695034, 0.979352, 0.0461111, 0.184154, 1, 1, 1, 3.33333, 1, -0.359207, 0.269719, -0.167469, -0.0695034, 0.979352, 0.0461111, 0.184154, 1, 1, 1 )
+
+[sub_resource type="Animation" id=39]
+resource_name = "Cylinder013"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder013")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0795515, 0.256901, -0.584496, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.0795515, 0.256901, -0.584496, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=40]
+resource_name = "Cylinder014"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder014")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0664148, 0.230823, 0.321963, 0.113163, 0.685284, 0.0962415, 0.712964, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.0664148, 0.230823, 0.321963, 0.113163, 0.685284, 0.0962415, 0.712964, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=41]
+resource_name = "Cylinder015"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder015")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.448147, 0.197, -0.39203, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.448147, 0.197, -0.39203, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=42]
+resource_name = "Cylinder016"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder016")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.164675, 0.334855, -0.31588, -0.0160064, 0.9882, -0.151927, 0.0110969, 1, 1, 1, 3.33333, 1, -0.164675, 0.334855, -0.31588, -0.0160064, 0.9882, -0.151927, 0.0110969, 1, 1, 1 )
+
+[sub_resource type="Animation" id=43]
+resource_name = "Cylinder017"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder017")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.260664, 0.376005, 0.119888, 0.0423116, -0.961169, -0.0718797, 0.263053, 1, 1, 1, 3.33333, 1, -0.260664, 0.376005, 0.119888, 0.0423116, -0.961169, -0.0718797, 0.263053, 1, 1, 1 )
+
+[sub_resource type="Animation" id=44]
+resource_name = "Cylinder018"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder018")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.193904, 0.349314, 0.0410748, -0.0757075, 0.988141, -0.133553, 0.0032227, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.193904, 0.349314, 0.0410748, -0.0757075, 0.988141, -0.133553, 0.0032227, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=45]
+resource_name = "Cylinder019"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder019")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.00905826, 0.396115, -0.0212211, -0.00392724, -0.768849, -0.0593544, 0.636658, 0.850552, 0.850552, 0.850552, 3.33333, 1, -0.00905826, 0.396115, -0.0212211, -0.00392724, -0.768849, -0.0593544, 0.636658, 0.850552, 0.850552, 0.850552 )
+
+[sub_resource type="Animation" id=46]
+resource_name = "Cylinder020"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder020")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.111493, 0.369424, -0.466542, 0.135619, -0.835045, 0.07194, 0.52833, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.111493, 0.369424, -0.466542, 0.135619, -0.835045, 0.07194, 0.52833, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=47]
+resource_name = "Cylinder021"
+length = 3.33333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("coins/Cylinder021")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.0414088, 0.265717, 0.498017, 0.14913, -0.272399, -0.0364446, 0.949858, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.0414088, 0.265717, 0.498017, 0.14913, -0.272399, -0.0364446, 0.949858, 0.841726, 0.841726, 0.841726 )
+
+[sub_resource type="Animation" id=48]
+resource_name = "chestopen"
+length = 0.791667
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Armature001/Skeleton:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 5.18776e-09, -4.06842e-09, -1.71638e-09, -1.32349e-23, 0, 0, 1, 1, 1, 1, 0.791667, 1, 5.18776e-09, -4.06842e-09, -1.71638e-09, -1.32349e-23, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Armature001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 0.68216, 0.588786, -0.462394, 0.707107, 3.26744e-05, 3.26743e-05, 0.707107, 1, 1, 1, 0.0666667, 1, 0.68216, 0.588786, -0.462394, 0.707021, -0.0109972, -0.0109972, 0.707021, 1, 1, 1, 0.133333, 1, 0.68216, 0.588786, -0.462394, 0.702371, -0.0817031, -0.0817031, 0.702371, 1, 1, 1, 0.2, 1, 0.68216, 0.588786, -0.462394, 0.677138, -0.203675, -0.203675, 0.677138, 1, 1, 1, 0.266667, 1, 0.68216, 0.588786, -0.462394, 0.62398, -0.33264, -0.332639, 0.62398, 1, 1, 1, 0.333333, 1, 0.68216, 0.588786, -0.462394, 0.557566, -0.43488, -0.43488, 0.557566, 1, 1, 1, 0.4, 1, 0.68216, 0.588786, -0.462394, 0.5185, -0.480789, -0.480788, 0.5185, 1, 1, 1, 0.466667, 1, 0.683146, 0.589772, -0.463379, 0.51542, -0.48409, -0.484123, 0.515387, 1, 1, 1, 0.533333, 1, 0.686513, 0.593139, -0.466747, 0.52204, -0.476952, -0.477151, 0.521841, 1, 1, 1, 0.666667, 1, 0.69602, 0.602646, -0.476254, 0.540444, -0.456088, -0.457241, 0.539291, 1, 1, 1, 0.733333, 1, 0.699542, 0.606168, -0.479775, 0.547153, -0.448095, -0.44979, 0.545457, 1, 1, 1, 0.791667, 1, 0.700871, 0.607497, -0.481105, 0.549668, -0.445043, -0.446965, 0.547746, 1, 1, 1 )
+
 [sub_resource type="ArrayMesh" id=4]
 resource_name = "chest_Cylinder002"
 surfaces/0 = {
@@ -371,270 +635,6 @@ surfaces/0 = {
 "vertex_count": 790
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "Cube017"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cube017")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.0546598, 0.344317, 0.0263387, 0, 0, 0, 1, 1, 1, 1, 3.33333, 1, 0.0546598, 0.344317, 0.0263387, 0, 0, 0, 1, 1, 1, 1 )
-
-[sub_resource type="Animation" id=26]
-resource_name = "Cylinder"
-length = 3.33333
-
-[sub_resource type="Animation" id=27]
-resource_name = "Cylinder001"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder001")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.0204364, 0.184023, 0.0275716, 0, 0, 0, 1, 1, 1, 1, 3.33333, 1, -0.0204364, 0.184023, 0.0275716, 0, 0, 0, 1, 1, 1, 1 )
-
-[sub_resource type="Animation" id=28]
-resource_name = "Cylinder002"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder002")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.0164144, 0.198096, 0.20855, 0.152372, -0.184906, 0.0109919, 0.97081, 1, 1, 1, 3.33333, 1, -0.0164144, 0.198096, 0.20855, 0.152372, -0.184906, 0.0109919, 0.97081, 1, 1, 1 )
-
-[sub_resource type="Animation" id=29]
-resource_name = "Cylinder003"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder003")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.000727942, 0.17539, -0.390863, 0.0164494, -0.0199616, 0.00118663, 0.999665, 0.7934, 0.7934, 0.7934, 3.33333, 1, -0.000727942, 0.17539, -0.390863, 0.0164494, -0.0199616, 0.00118663, 0.999665, 0.7934, 0.7934, 0.7934 )
-
-[sub_resource type="Animation" id=30]
-resource_name = "Cylinder004"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder004")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.224669, 0.239246, -0.166931, -0.0633075, 0.0897202, -0.0543058, 0.992468, 1, 1, 1, 3.33333, 1, 0.224669, 0.239246, -0.166931, -0.0633075, 0.0897202, -0.0543058, 0.992468, 1, 1, 1 )
-
-[sub_resource type="Animation" id=31]
-resource_name = "Cylinder005"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder005")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.205256, 0.226428, 0.334807, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.205256, 0.226428, 0.334807, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=32]
-resource_name = "Cylinder006"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder006")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.229036, 0.212555, -0.250566, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.229036, 0.212555, -0.250566, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=33]
-resource_name = "Cylinder007"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder007")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.34499, 0.166527, 0.447672, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.34499, 0.166527, 0.447672, 0.144796, -0.177144, -0.0510117, 0.972138, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=34]
-resource_name = "Cylinder008"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder008")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.0602492, 0.259356, -0.121782, -0.0591187, 0.491349, -0.00658403, 0.868929, 0.850552, 0.850552, 0.850552, 3.33333, 1, -0.0602492, 0.259356, -0.121782, -0.0591187, 0.491349, -0.00658403, 0.868929, 0.850552, 0.850552, 0.850552 )
-
-[sub_resource type="Animation" id=35]
-resource_name = "Cylinder009"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder009")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.386343, 0.246538, 0.107727, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.386343, 0.246538, 0.107727, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=36]
-resource_name = "Cylinder010"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder010")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.327684, 0.232665, 0.254146, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.327684, 0.232665, 0.254146, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=37]
-resource_name = "Cylinder011"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder011")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.256246, 0.186637, 0.654156, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.256246, 0.186637, 0.654156, 0.0946934, 0.373059, -0.120835, 0.915019, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=38]
-resource_name = "Cylinder012"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder012")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.359207, 0.269719, -0.167469, -0.0695034, 0.979352, 0.0461111, 0.184154, 1, 1, 1, 3.33333, 1, -0.359207, 0.269719, -0.167469, -0.0695034, 0.979352, 0.0461111, 0.184154, 1, 1, 1 )
-
-[sub_resource type="Animation" id=39]
-resource_name = "Cylinder013"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder013")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.0795515, 0.256901, -0.584496, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.0795515, 0.256901, -0.584496, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=40]
-resource_name = "Cylinder014"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder014")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.0664148, 0.230823, 0.321963, 0.113163, 0.685284, 0.0962415, 0.712964, 0.841726, 0.841726, 0.841726, 3.33333, 1, -0.0664148, 0.230823, 0.321963, 0.113163, 0.685284, 0.0962415, 0.712964, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=41]
-resource_name = "Cylinder015"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder015")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.448147, 0.197, -0.39203, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.448147, 0.197, -0.39203, -0.00961953, 0.887062, -0.153217, 0.435376, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=42]
-resource_name = "Cylinder016"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder016")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.164675, 0.334855, -0.31588, -0.0160064, 0.9882, -0.151927, 0.0110969, 1, 1, 1, 3.33333, 1, -0.164675, 0.334855, -0.31588, -0.0160064, 0.9882, -0.151927, 0.0110969, 1, 1, 1 )
-
-[sub_resource type="Animation" id=43]
-resource_name = "Cylinder017"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder017")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.260664, 0.376005, 0.119888, 0.0423116, -0.961169, -0.0718797, 0.263053, 1, 1, 1, 3.33333, 1, -0.260664, 0.376005, 0.119888, 0.0423116, -0.961169, -0.0718797, 0.263053, 1, 1, 1 )
-
-[sub_resource type="Animation" id=44]
-resource_name = "Cylinder018"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder018")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.193904, 0.349314, 0.0410748, -0.0757075, 0.988141, -0.133553, 0.0032227, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.193904, 0.349314, 0.0410748, -0.0757075, 0.988141, -0.133553, 0.0032227, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=45]
-resource_name = "Cylinder019"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder019")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, -0.00905826, 0.396115, -0.0212211, -0.00392724, -0.768849, -0.0593544, 0.636658, 0.850552, 0.850552, 0.850552, 3.33333, 1, -0.00905826, 0.396115, -0.0212211, -0.00392724, -0.768849, -0.0593544, 0.636658, 0.850552, 0.850552, 0.850552 )
-
-[sub_resource type="Animation" id=46]
-resource_name = "Cylinder020"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder020")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.111493, 0.369424, -0.466542, 0.135619, -0.835045, 0.07194, 0.52833, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.111493, 0.369424, -0.466542, 0.135619, -0.835045, 0.07194, 0.52833, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=47]
-resource_name = "Cylinder021"
-length = 3.33333
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cylinder021")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0.0414088, 0.265717, 0.498017, 0.14913, -0.272399, -0.0364446, 0.949858, 0.841726, 0.841726, 0.841726, 3.33333, 1, 0.0414088, 0.265717, 0.498017, 0.14913, -0.272399, -0.0364446, 0.949858, 0.841726, 0.841726, 0.841726 )
-
-[sub_resource type="Animation" id=48]
-resource_name = "chestopen"
-length = 0.791667
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Armature001/Skeleton:Bone")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 5.18776e-09, -4.06842e-09, -1.71638e-09, -1.32349e-23, 0, 0, 1, 1, 1, 1, 0.791667, 1, 5.18776e-09, -4.06842e-09, -1.71638e-09, -1.32349e-23, 0, 0, 1, 1, 1, 1 )
-tracks/1/type = "transform"
-tracks/1/path = NodePath("Armature001")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = PoolRealArray( 0, 1, 0.68216, 0.588786, -0.462394, 0.707107, 3.26744e-05, 3.26743e-05, 0.707107, 1, 1, 1, 0.0666667, 1, 0.68216, 0.588786, -0.462394, 0.707021, -0.0109972, -0.0109972, 0.707021, 1, 1, 1, 0.133333, 1, 0.68216, 0.588786, -0.462394, 0.702371, -0.0817031, -0.0817031, 0.702371, 1, 1, 1, 0.2, 1, 0.68216, 0.588786, -0.462394, 0.677138, -0.203675, -0.203675, 0.677138, 1, 1, 1, 0.266667, 1, 0.68216, 0.588786, -0.462394, 0.62398, -0.33264, -0.332639, 0.62398, 1, 1, 1, 0.333333, 1, 0.68216, 0.588786, -0.462394, 0.557566, -0.43488, -0.43488, 0.557566, 1, 1, 1, 0.4, 1, 0.68216, 0.588786, -0.462394, 0.5185, -0.480789, -0.480788, 0.5185, 1, 1, 1, 0.466667, 1, 0.683146, 0.589772, -0.463379, 0.51542, -0.48409, -0.484123, 0.515387, 1, 1, 1, 0.533333, 1, 0.686513, 0.593139, -0.466747, 0.52204, -0.476952, -0.477151, 0.521841, 1, 1, 1, 0.666667, 1, 0.69602, 0.602646, -0.476254, 0.540444, -0.456088, -0.457241, 0.539291, 1, 1, 1, 0.733333, 1, 0.699542, 0.606168, -0.479775, 0.547153, -0.448095, -0.44979, 0.545457, 1, 1, 1, 0.791667, 1, 0.700871, 0.607497, -0.481105, 0.549668, -0.445043, -0.446965, 0.547746, 1, 1, 1 )
-
 [node name="chest" type="StaticBody"]
 
 [node name="Cube017" type="MeshInstance" parent="."]
@@ -658,90 +658,6 @@ bones/0/bound_children = [  ]
 [node name="Cylinder" type="MeshInstance" parent="Armature001/Skeleton"]
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
-
-[node name="Cylinder001" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0204364, 0.184023, 0.0275716 )
-mesh = SubResource( 4 )
-
-[node name="Cylinder002" type="MeshInstance" parent="."]
-transform = Transform( 0.931378, -0.0776909, -0.355667, -0.0350068, 0.953324, -0.299913, 0.362367, 0.291783, 0.885185, -0.0164144, 0.198096, 0.20855 )
-mesh = SubResource( 5 )
-
-[node name="Cylinder003" type="MeshInstance" parent="."]
-transform = Transform( 0.792765, -0.00240335, -0.0316335, 0.00136127, 0.792968, -0.0261307, 0.0316954, 0.0260556, 0.792338, -0.000727942, 0.17539, -0.390863 )
-mesh = SubResource( 6 )
-
-[node name="Cylinder004" type="MeshInstance" parent="."]
-transform = Transform( 0.978002, 0.0964337, 0.184965, -0.119154, 0.986086, 0.115917, -0.171213, -0.135406, 0.975885, 0.224669, 0.239246, -0.166931 )
-mesh = SubResource( 7 )
-
-[node name="Cylinder005" type="MeshInstance" parent="."]
-transform = Transform( 0.784519, 0.040303, -0.30234, -0.126663, 0.802051, -0.221753, 0.277471, 0.252177, 0.753605, 0.205256, 0.226428, 0.334807 )
-mesh = SubResource( 8 )
-
-[node name="Cylinder006" type="MeshInstance" parent="."]
-transform = Transform( 0.784519, 0.040303, -0.30234, -0.126663, 0.802051, -0.221753, 0.277471, 0.252177, 0.753605, -0.229036, 0.212555, -0.250566 )
-mesh = SubResource( 9 )
-
-[node name="Cylinder007" type="MeshInstance" parent="."]
-transform = Transform( 0.784519, 0.040303, -0.30234, -0.126663, 0.802051, -0.221753, 0.277471, 0.252177, 0.753605, -0.34499, 0.166527, 0.447672 )
-mesh = SubResource( 10 )
-
-[node name="Cylinder008" type="MeshInstance" parent="."]
-transform = Transform( 0.43979, -0.0396814, 0.726945, -0.0591457, 0.844533, 0.0818824, -0.72562, -0.0928888, 0.433919, -0.0602492, 0.259356, -0.121782 )
-mesh = SubResource( 11 )
-
-[node name="Cylinder009" type="MeshInstance" parent="."]
-transform = Transform( 0.582855, 0.245603, 0.555394, -0.126663, 0.802051, -0.221753, -0.593919, 0.069977, 0.59234, 0.386343, 0.246538, 0.107727 )
-mesh = SubResource( 12 )
-
-[node name="Cylinder010" type="MeshInstance" parent="."]
-transform = Transform( 0.582855, 0.245603, 0.555394, -0.126663, 0.802051, -0.221753, -0.593919, 0.069977, 0.59234, -0.327684, 0.232665, 0.254146 )
-mesh = SubResource( 13 )
-
-[node name="Cylinder011" type="MeshInstance" parent="."]
-transform = Transform( 0.582855, 0.245603, 0.555394, -0.126663, 0.802051, -0.221753, -0.593919, 0.069977, 0.59234, 0.256246, 0.186637, 0.654156 )
-mesh = SubResource( 14 )
-
-[node name="Cylinder012" type="MeshInstance" parent="."]
-transform = Transform( -0.922513, -0.15312, 0.354293, -0.119154, 0.986086, 0.115917, -0.367113, 0.0647195, -0.927922, -0.359207, 0.269719, -0.167469 )
-mesh = SubResource( 15 )
-
-[node name="Cylinder013" type="MeshInstance" parent="."]
-transform = Transform( -0.522468, 0.0979329, 0.65264, -0.126663, 0.802051, -0.221753, -0.647678, -0.235854, -0.483104, -0.0795515, 0.256901, -0.584496 )
-mesh = SubResource( 16 )
-
-[node name="Cylinder014" type="MeshInstance" parent="."]
-transform = Transform( 0.03556, 0.0150362, 0.840841, 0.246062, 0.804576, -0.0247939, -0.804172, 0.246851, 0.029595, -0.0664148, 0.230823, 0.321963 )
-mesh = SubResource( 17 )
-
-[node name="Cylinder015" type="MeshInstance" parent="."]
-transform = Transform( -0.522468, 0.0979329, 0.65264, -0.126663, 0.802051, -0.221753, -0.647678, -0.235854, -0.483104, 0.448147, 0.197, -0.39203 )
-mesh = SubResource( 18 )
-
-[node name="Cylinder016" type="MeshInstance" parent="."]
-transform = Transform( -0.999241, -0.0282631, 0.0267956, -0.0350068, 0.953324, -0.299913, -0.0170684, -0.300623, -0.95359, -0.164675, 0.334855, -0.31588 )
-mesh = SubResource( 19 )
-
-[node name="Cylinder017" type="MeshInstance" parent="."]
-transform = Transform( -0.858026, -0.043521, -0.511759, -0.119154, 0.986086, 0.115917, 0.499593, 0.160437, -0.851273, -0.260664, 0.376005, 0.119888 )
-mesh = SubResource( 20 )
-
-[node name="Cylinder018" type="MeshInstance" parent="."]
-transform = Transform( -0.83206, -0.125214, 0.0223822, -0.126663, 0.802051, -0.221753, 0.0116604, -0.222574, -0.811682, 0.193904, 0.349314, 0.0410748 )
-mesh = SubResource( 21 )
-
-[node name="Cylinder019" type="MeshInstance" parent="."]
-transform = Transform( -0.161012, 0.0694184, -0.832283, -0.0591456, 0.844533, 0.0818824, 0.833076, 0.0733758, -0.155046, -0.00905826, 0.396115, -0.0212211 )
-mesh = SubResource( 22 )
-
-[node name="Cylinder020" type="MeshInstance" parent="."]
-transform = Transform( -0.340857, -0.254633, -0.72628, -0.126663, 0.802051, -0.221753, 0.759129, 0.019492, -0.363108, 0.111493, 0.369424, -0.466542 )
-mesh = SubResource( 23 )
-
-[node name="Cylinder021" type="MeshInstance" parent="."]
-transform = Transform( 0.714576, -0.0101102, -0.444727, -0.126663, 0.802051, -0.221753, 0.426428, 0.255177, 0.679372, 0.0414088, 0.265717, 0.498017 )
-mesh = SubResource( 24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Cube017 = SubResource( 25 )
@@ -768,3 +684,110 @@ anims/Cylinder019 = SubResource( 45 )
 anims/Cylinder020 = SubResource( 46 )
 anims/Cylinder021 = SubResource( 47 )
 anims/chestopen = SubResource( 48 )
+
+[node name="coins" type="Spatial" parent="."]
+
+[node name="Cylinder001" type="MeshInstance" parent="coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0204364, 0.184023, 0.0275716 )
+mesh = SubResource( 4 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder002" type="MeshInstance" parent="coins"]
+transform = Transform( 0.931378, -0.0776909, -0.355667, -0.0350068, 0.953324, -0.299913, 0.362367, 0.291783, 0.885185, -0.0164144, 0.198096, 0.20855 )
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder003" type="MeshInstance" parent="coins"]
+transform = Transform( 0.792765, -0.00240335, -0.0316335, 0.00136127, 0.792968, -0.0261307, 0.0316954, 0.0260556, 0.792338, -0.000727942, 0.17539, -0.390863 )
+mesh = SubResource( 6 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder004" type="MeshInstance" parent="coins"]
+transform = Transform( 0.978002, 0.0964337, 0.184965, -0.119154, 0.986086, 0.115917, -0.171213, -0.135406, 0.975885, 0.224669, 0.239246, -0.166931 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder005" type="MeshInstance" parent="coins"]
+transform = Transform( 0.784519, 0.040303, -0.30234, -0.126663, 0.802051, -0.221753, 0.277471, 0.252177, 0.753605, 0.205256, 0.226428, 0.334807 )
+mesh = SubResource( 8 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder006" type="MeshInstance" parent="coins"]
+transform = Transform( 0.784519, 0.040303, -0.30234, -0.126663, 0.802051, -0.221753, 0.277471, 0.252177, 0.753605, -0.229036, 0.212555, -0.250566 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder007" type="MeshInstance" parent="coins"]
+transform = Transform( 0.784519, 0.040303, -0.30234, -0.126663, 0.802051, -0.221753, 0.277471, 0.252177, 0.753605, -0.34499, 0.166527, 0.447672 )
+mesh = SubResource( 10 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder008" type="MeshInstance" parent="coins"]
+transform = Transform( 0.43979, -0.0396814, 0.726945, -0.0591457, 0.844533, 0.0818824, -0.72562, -0.0928888, 0.433919, -0.0602492, 0.259356, -0.121782 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder009" type="MeshInstance" parent="coins"]
+transform = Transform( 0.582855, 0.245603, 0.555394, -0.126663, 0.802051, -0.221753, -0.593919, 0.069977, 0.59234, 0.386343, 0.246538, 0.107727 )
+mesh = SubResource( 12 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder010" type="MeshInstance" parent="coins"]
+transform = Transform( 0.582855, 0.245603, 0.555394, -0.126663, 0.802051, -0.221753, -0.593919, 0.069977, 0.59234, -0.327684, 0.232665, 0.254146 )
+mesh = SubResource( 13 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder011" type="MeshInstance" parent="coins"]
+transform = Transform( 0.582855, 0.245603, 0.555394, -0.126663, 0.802051, -0.221753, -0.593919, 0.069977, 0.59234, 0.256246, 0.186637, 0.654156 )
+mesh = SubResource( 14 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder012" type="MeshInstance" parent="coins"]
+transform = Transform( -0.922513, -0.15312, 0.354293, -0.119154, 0.986086, 0.115917, -0.367113, 0.0647195, -0.927922, -0.359207, 0.269719, -0.167469 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder013" type="MeshInstance" parent="coins"]
+transform = Transform( -0.522468, 0.0979329, 0.65264, -0.126663, 0.802051, -0.221753, -0.647678, -0.235854, -0.483104, -0.0795515, 0.256901, -0.584496 )
+mesh = SubResource( 16 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder014" type="MeshInstance" parent="coins"]
+transform = Transform( 0.03556, 0.0150362, 0.840841, 0.246062, 0.804576, -0.0247939, -0.804172, 0.246851, 0.029595, -0.0664148, 0.230823, 0.321963 )
+mesh = SubResource( 17 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder015" type="MeshInstance" parent="coins"]
+transform = Transform( -0.522468, 0.0979329, 0.65264, -0.126663, 0.802051, -0.221753, -0.647678, -0.235854, -0.483104, 0.448147, 0.197, -0.39203 )
+mesh = SubResource( 18 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder016" type="MeshInstance" parent="coins"]
+transform = Transform( -0.999241, -0.0282631, 0.0267956, -0.0350068, 0.953324, -0.299913, -0.0170684, -0.300623, -0.95359, -0.164675, 0.334855, -0.31588 )
+mesh = SubResource( 19 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder017" type="MeshInstance" parent="coins"]
+transform = Transform( -0.858026, -0.043521, -0.511759, -0.119154, 0.986086, 0.115917, 0.499593, 0.160437, -0.851273, -0.260664, 0.376005, 0.119888 )
+mesh = SubResource( 20 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder018" type="MeshInstance" parent="coins"]
+transform = Transform( -0.83206, -0.125214, 0.0223822, -0.126663, 0.802051, -0.221753, 0.0116604, -0.222574, -0.811682, 0.193904, 0.349314, 0.0410748 )
+mesh = SubResource( 21 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder019" type="MeshInstance" parent="coins"]
+transform = Transform( -0.161012, 0.0694184, -0.832283, -0.0591456, 0.844533, 0.0818824, 0.833076, 0.0733758, -0.155046, -0.00905826, 0.396115, -0.0212211 )
+mesh = SubResource( 22 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder020" type="MeshInstance" parent="coins"]
+transform = Transform( -0.340857, -0.254633, -0.72628, -0.126663, 0.802051, -0.221753, 0.759129, 0.019492, -0.363108, 0.111493, 0.369424, -0.466542 )
+mesh = SubResource( 23 )
+skeleton = NodePath("../..")
+
+[node name="Cylinder021" type="MeshInstance" parent="coins"]
+transform = Transform( 0.714576, -0.0101102, -0.444727, -0.126663, 0.802051, -0.221753, 0.426428, 0.255177, 0.679372, 0.0414088, 0.265717, 0.498017 )
+mesh = SubResource( 24 )
+skeleton = NodePath("../..")
