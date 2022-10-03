@@ -54,7 +54,7 @@ glow_high_quality = true
 [node name="World2" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3816, 0.499999, -20.1651 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15487, 0.499999, 3.05402 )
 __meta__ = {
 "_edit_group_": true
 }

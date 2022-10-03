@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://blender/house3.glb" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4.15734, 3.7404, 0.454855 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.01435, 3.7404, 0.590773 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 6.15484, 3.7404, 0.590773 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 2.74306, 1.07891, 1.11982 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.01433, 4.20088, 4.21062 )
+
+[node name="house3" instance=ExtResource( 1 )]
+
+[node name="StaticBody" type="StaticBody" parent="." index="3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82605, 0, 4.62959 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94942, 0, 4.62959 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543122, 0, -1.07443 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46469, 0, 0.910526 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.99559, 0, 0.910526 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="StaticBody" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24713, 0, 0.910526 )
+shape = SubResource( 5 )

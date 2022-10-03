@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/manhole_open.ogg-f4a787250b9e7761674adb1c4205aab2.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/manhole_open.ogg"
+dest_files=[ "res://.import/manhole_open.ogg-f4a787250b9e7761674adb1c4205aab2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wooden_door_open.ogg-ad94eb003530507e14576561201c1838.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/wooden_door_open.ogg"
+dest_files=[ "res://.import/wooden_door_open.ogg-ad94eb003530507e14576561201c1838.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

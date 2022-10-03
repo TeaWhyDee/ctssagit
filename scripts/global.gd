@@ -4,6 +4,7 @@ signal timeout
 const TIMEOUT = 10
 var timer: float
 var intro: bool = true
+var coins = 0
 
 func _process(delta: float):
 	timer += delta
@@ -14,3 +15,4 @@ func _process(delta: float):
 func reset():
 	intro = true
 	timer = 0
+	coins = 0

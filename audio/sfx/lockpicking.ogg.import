@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lockpicking.ogg-de981cff33df84d13401a543ed5b5449.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/lockpicking.ogg"
+dest_files=[ "res://.import/lockpicking.ogg-de981cff33df84d13401a543ed5b5449.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
