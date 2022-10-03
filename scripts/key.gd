@@ -1,10 +1,12 @@
 extends Area
 
+var cant = false
 onready var player = get_tree().get_nodes_in_group("player")[0]
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("action"):
-		if player in get_overlapping_bodies():
+		if player in get_overlapping_bodies() and not cant:
+			cant = true
 			player.keys += 1
 			hide()
 			$Sound.play()

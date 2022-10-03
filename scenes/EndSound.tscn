@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://audio/sfx/running_away.ogg" type="AudioStream" id=1]
+[ext_resource path="res://scenes/EndSound.gd" type="Script" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 4
+
+[node name="EndSound" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="EndSound"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sound" type="AudioStreamPlayer" parent="EndSound"]
+stream = ExtResource( 1 )
+autoplay = true
+
+[connection signal="finished" from="EndSound/Sound" to="EndSound" method="_on_Sound_finished"]

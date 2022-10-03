@@ -11,5 +11,5 @@ dest_files=[ "res://.import/running_away.ogg-156d5f49ced80633758c08a831bf355a.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

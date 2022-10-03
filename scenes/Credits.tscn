@@ -95,6 +95,7 @@ kyles@Freesound.org"
 align = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 1922.0
