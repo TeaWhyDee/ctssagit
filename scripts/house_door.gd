@@ -14,5 +14,12 @@ func _input(event: InputEvent):
 			#audioplayer.play()
 			#enter()
 			opened = true
-			$door/AnimationPlayer.play("open")
+			$Prompt.queue_free()
+			$lockpick.play()
+			$Timer.start()
 
+
+func _on_Timer_timeout():
+	$CollisionShape.disabled = true
+	$door/AnimationPlayer.play("open")
+	$DoorOpened.play()

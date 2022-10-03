@@ -11,5 +11,5 @@ dest_files=[ "res://.import/chest_open.ogg-349720861b057915954308dc4218f68f.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

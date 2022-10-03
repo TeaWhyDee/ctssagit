@@ -11,5 +11,5 @@ dest_files=[ "res://.import/manhole_close.ogg-7ab4ce9ed83229819223d6c2f7bf9d8c.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

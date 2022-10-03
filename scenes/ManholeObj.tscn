@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/manhole.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/manhole.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Prompt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/sfx/manhole_open.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio/sfx/manhole_close.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CylinderShape" id=1]
 height = 1.29802
@@ -30,5 +32,11 @@ shape = SubResource( 2 )
 [node name="Prompt" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.720645, 0 )
 appear_distance = 2.0
+
+[node name="open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
 
 [editable path="Mesh"]

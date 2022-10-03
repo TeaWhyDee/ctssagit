@@ -11,5 +11,5 @@ dest_files=[ "res://.import/lockpicking.ogg-de981cff33df84d13401a543ed5b5449.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

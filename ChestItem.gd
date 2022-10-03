@@ -13,7 +13,9 @@ func _input(event: InputEvent):
 			#audioplayer.set_stream("res://audio/sfx/lockpicking.ogg")
 			#audioplayer.play()
 			#enter()
-			get_parent().add_coin()
+			get_parent().get_parent().add_coin()
+			$Prompt.queue_free()
 			opened = true
 			$chest/AnimationPlayer.play("chestopen")
+			$AudioStreamPlayer3D.play()
 

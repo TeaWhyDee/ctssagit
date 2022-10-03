@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://blender/house1.glb" type="PackedScene" id=1]
+[ext_resource path="res://audio/sfx/snore_loop.ogg" type="AudioStream" id=2]
 
 [sub_resource type="BoxShape" id=13]
 extents = Vector3( 4.15734, 3.7404, 0.590773 )
@@ -44,3 +45,9 @@ shape = SubResource( 17 )
 [node name="CollisionShape6" type="CollisionShape" parent="StaticBody" index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67792, 0, 0.910526 )
 shape = SubResource( 17 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.06556, 1.63395, 0 )
+stream = ExtResource( 2 )
+autoplay = true
+max_distance = 15.0

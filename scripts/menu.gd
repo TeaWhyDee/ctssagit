@@ -14,7 +14,7 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_play_pressed():
-	get_tree().change_scene("res://scenes/Main.tscn")
+	get_tree().change_scene("res://scenes/level1.tscn")
 	Overlay.get_node("HUD/C").show()
 
 func _on_music_value_changed(value: float):

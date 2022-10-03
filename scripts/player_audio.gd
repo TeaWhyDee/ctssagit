@@ -9,6 +9,7 @@ var barrel_player: AudioStreamPlayer3D
 func _ready():
 	get_parent().connect("barreled", self, "_on_barreled")
 	get_parent().connect("unbarreled", self, "_on_unbarreled")
+	Global.connect("timeout", self, "_on_timeout")
 
 func _process(delta: float):
 	if not get_parent().manholed:

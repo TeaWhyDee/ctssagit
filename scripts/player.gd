@@ -12,11 +12,17 @@ var pushing_speed: float
 var pushing_timer: float
 var barrel_mode: bool
 var barrel_timeout: float = 0.1
-var manholed: bool
+export var manholed: bool
 onready var camera_init_pos = $Camera.translation
 onready var camera_init_fov = $Camera.fov
 
 func _ready():
+	if manholed:
+		$Mesh/AnimationPlayer.play("cat_hide")
+		var l = $Mesh/AnimationPlayer.get_current_animation_length()
+		print(l)
+		$Mesh/AnimationPlayer.advance(l-0.1)
+		
 	$Camera.set_as_toplevel(true)
 	#$Mesh/AnimationPlayer.set_blend_time("idle", "walk", 0.2)
 	#$Mesh/AnimationPlayer.set_blend_time("walk", "idle", 0.3)

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/wooden_door_open.ogg-ad94eb003530507e14576561201c183
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
