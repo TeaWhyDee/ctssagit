@@ -126,29 +126,29 @@ Levi Vilas Boas | EngarrafAudio
 [b]Additional Sources[/b]
 kyles@Freesound.org
 [/center]"
-text = "
-3D modelling
+text = "[center]
+[b]3D modelling[/b]
 TeaWhyDee
 Sandeia
 
-Level design
+[b]Level design[/b]
 TeaWhyDee
 PizzArt
 
-Code
+[b]Code[/b]
 TeaWhyDee
 PizzArt
 
-Music
+[b]Music[/b]
 TwoSpaces
 Levi Vilas Boas | EngarrafAudio
 
-SFX
+[b]SFX[/b]
 Levi Vilas Boas | EngarrafAudio
 
-Additional Sources
+[b]Additional Sources[/b]
 kyles@Freesound.org
-"
+[/center]"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
