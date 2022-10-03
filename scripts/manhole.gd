@@ -22,7 +22,6 @@ func enter():
 		hidden = true
 
 func exit():
-	$AudioStreamPlayer3D.play()
 	player.unmanhole()
 	$close.play()
 	$Mesh/AnimationPlayer.play("open")

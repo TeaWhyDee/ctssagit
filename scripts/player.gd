@@ -12,6 +12,7 @@ var pushing_speed: float
 var pushing_timer: float
 var barrel_mode: bool
 var barrel_timeout: float = 0.1
+var sneeze_lock: float
 export var manholed: bool
 onready var camera_init_pos = $Camera.translation
 onready var camera_init_fov = $Camera.fov
@@ -20,7 +21,6 @@ func _ready():
 	if manholed:
 		$Mesh/AnimationPlayer.play("cat_hide")
 		var l = $Mesh/AnimationPlayer.get_current_animation_length()
-		print(l)
 		$Mesh/AnimationPlayer.advance(l-0.1)
 		
 	$Camera.set_as_toplevel(true)
@@ -103,7 +103,7 @@ func hide_in_manhole(manhole: Spatial):
 		$CollisionShape.disabled = true
 		var dir = global_translation.direction_to(manhole.global_translation)
 		rotation.y = atan2(-dir.z, dir.x) - PI / 2
-		global_translation = manhole.global_translation - dir * 1.1
+		global_translation = manhole.global_translation - dir * 1.2
 		$Mesh/AnimationPlayer.play("cat_hide")
 		manholed = true
 	return not barrel_mode
@@ -113,6 +113,10 @@ func unmanhole():
 	yield($Mesh/AnimationPlayer, "animation_finished")
 	$CollisionShape.disabled = false
 	manholed = false
+
+func sneeze():
+	$AudioPlayer.play_audio("sneeze", 3, 10)
+	sneeze_lock = 0.3
 
 func _on_timeout():
 	if not Global.intro:

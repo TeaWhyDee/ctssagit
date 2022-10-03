@@ -15,6 +15,7 @@ func _on_quit_pressed():
 
 func _on_play_pressed():
 	get_tree().change_scene("res://scenes/level1.tscn")
+	Global.reset()
 	Overlay.get_node("HUD/C").show()
 
 func _on_music_value_changed(value: float):
@@ -29,7 +30,7 @@ func _on_sfx_drag_ended(value_changed:bool):
 func _oncolors_toggled(button_pressed:bool):
 	var val = 0
 	if button_pressed:
-		val = 3
+		val = 2
 	Overlay.get_node("HUD/BBC/CRT").material.set_shader_param("aberration_amount", val)
 	play_clock()
 

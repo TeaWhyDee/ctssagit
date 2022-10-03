@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Calm_Version.ogg-fd9ed9ea80aaf0c456c196119090ce6a.oggstr"
+
+[deps]
+
+source_file="res://audio/mus/Calm_Version.ogg"
+dest_files=[ "res://.import/Calm_Version.ogg-fd9ed9ea80aaf0c456c196119090ce6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

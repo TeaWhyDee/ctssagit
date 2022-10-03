@@ -123,7 +123,7 @@ shader = SubResource( 5 )
 shader_param/scanlines_shown = true
 shader_param/curvature_shown = false
 shader_param/warp_shown = false
-shader_param/aberration_amount = 3.0
+shader_param/aberration_amount = 2.0
 shader_param/static_intensity = 10.0
 shader_param/time_scale = 1.0
 
@@ -135,7 +135,6 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="C" type="CenterContainer" parent="HUD"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 137.0
