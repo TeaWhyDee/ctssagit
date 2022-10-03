@@ -20,5 +20,6 @@ func _input(event: InputEvent):
 			Overlay.get_node("cutscene1").play()
 
 func _on_finished():
+	print(1)
 	get_tree().change_scene("res://scenes/Main.tscn")
 	Overlay.get_node("cutscene1").visible = false

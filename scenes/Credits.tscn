@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://misc/font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://misc/Righteous-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/Credits.gd" type="Script" id=3]
+[ext_resource path="res://video/cutscene2.webm" type="VideoStream" id=4]
+[ext_resource path="res://audio/mus/Credits.ogg" type="AudioStream" id=5]
+[ext_resource path="res://misc/theme.tres" type="Theme" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -34,7 +37,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "scroll"
-length = 5.0
+length = 30.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("RichTextLabel:rect_position:x")
 tracks/0/interp = 1
@@ -43,7 +46,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 5, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 4.9 )
+"times": PoolRealArray( 0, 29.9 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("RichTextLabel:rect_position:y")
@@ -53,11 +56,17 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "points": PoolRealArray( 1000, -0.25, 0, 0.25, 0, -1600, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 4.9 )
+"times": PoolRealArray( 0, 29.9 )
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 3 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 4 )
+autoplay = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -143,3 +152,22 @@ kyles@Freesound.org
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/scroll = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 1477.0
+margin_top = 953.0
+margin_right = 1837.0
+margin_bottom = 1024.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 1 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="button_down" from="Quit" to="." method="_on_Quit_button_down"]
