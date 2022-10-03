@@ -3,6 +3,9 @@ extends Control
 var current = 0
 onready var sounds = [$Clock1, $Clock2]
 
+func _ready():
+	Global.timer = 2
+
 func play_clock():
 	sounds[current].play()
 	if current == 0:

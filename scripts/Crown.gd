@@ -14,6 +14,7 @@ func _input(event: InputEvent):
 			#audioplayer.set_stream("res://audio/sfx/lockpicking.ogg")
 			#audioplayer.play()
 			#enter()
+			Global.timer = 0
 			$Prompt.queue_free()
 			get_parent().get_node("Music").stop()
 			Overlay.get_node("cutscene1").visible = true

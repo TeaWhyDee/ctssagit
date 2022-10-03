@@ -16147,7 +16147,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36694, 0.108672, 25.9567 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.418, 1.074, -0.051 )
 
 [node name="Armature002" parent="menu_cat" index="0"]
-transform = Transform( 0.998612, 0.0525482, 0.00366114, -0.0525437, 0.998618, -0.00132603, -0.00372576, 0.00113182, 0.999992, -5.15309, -0.102265, 25.7179 )
+transform = Transform( 0.99778, 0.0665438, 0.00262905, -0.0665341, 0.997778, -0.00360236, -0.00286292, 0.00341945, 0.99999, -5.15309, -0.321448, 25.7179 )
 
 [node name="AnimationPlayer" parent="menu_cat" index="1"]
 anims/Circle002 = SubResource( 23 )
@@ -16160,6 +16160,16 @@ anims/pupils = SubResource( 29 )
 anims/push = SubResource( 30 )
 anims/rig001Action = SubResource( 31 )
 anims/walk = SubResource( 32 )
+
+[node name="sneeze" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="menu_cat/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="manhole"]
 [editable path="menu_hole"]
