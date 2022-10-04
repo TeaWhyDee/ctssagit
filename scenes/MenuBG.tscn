@@ -16162,6 +16162,7 @@ anims/rig001Action = SubResource( 31 )
 anims/walk = SubResource( 32 )
 
 [node name="sneeze" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 8.0

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/hud.gd" type="Script" id=1]
 [ext_resource path="res://textures/clock.png" type="Texture" id=2]
 [ext_resource path="res://video/cutscene1.webm" type="VideoStream" id=3]
+[ext_resource path="res://misc/font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/overlay.gd" type="Script" id=5]
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -129,6 +131,7 @@ shader_param/static_intensity = 10.0
 shader_param/time_scale = 1.0
 
 [node name="Overlay" type="CanvasLayer"]
+script = ExtResource( 5 )
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
@@ -163,6 +166,14 @@ margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
+[node name="QuitText" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+text = "Press ESCAPE again to quit"
+align = 1
+
 [node name="BBC" type="BackBufferCopy" parent="HUD"]
 rect = Rect2( 0, 0, 1920, 1080 )
 
@@ -172,8 +183,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="cutscene1" type="VideoPlayer" parent="."]
+[node name="cutscene1" type="VideoPlayer" parent="HUD"]
 visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

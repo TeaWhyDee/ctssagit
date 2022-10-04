@@ -7,7 +7,7 @@ func _ready():
 	$RichTextLabel.show()
 
 func _on_VideoPlayer_finished():
-	$VideoPlayer.play()
+	$Control/VideoPlayer.play()
 
 func _on_Quit_button_down():
 	get_tree().quit()
