@@ -983,7 +983,15 @@ environment = SubResource( 1 )
 stream = ExtResource( 4 )
 bus = "Music"
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Tutorial1" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4689, 2.46552, -16.7741 )
+pixel_size = 0.0062
+billboard = 1
+text = "Cameras detect you every 10 seconds. Hiding is key!"
+font = ExtResource( 12 )
+autowrap = true
+
+[node name="Tutorial2" type="Label3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.6521, 2.46552, -30.4633 )
 pixel_size = 0.0062
 billboard = 1

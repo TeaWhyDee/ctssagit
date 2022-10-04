@@ -10,8 +10,11 @@ config_version=4
 
 [application]
 
-config/name="LD51"
+config/name="Cat That Steals Stuff and Gets in Trouble"
 run/main_scene="res://scenes/Menu.tscn"
+boot_splash/show_image=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://textures/icon.png"
 
 [autoload]
 
@@ -25,6 +28,7 @@ window/size/width=1920
 window/size/height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
+window/size/fullscreen=true
 
 [gui]
 

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://misc/font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://misc/Righteous-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/Credits.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Credits.gd" type="Script" id=3]
 [ext_resource path="res://video/cutscene2.webm" type="VideoStream" id=4]
 [ext_resource path="res://audio/mus/Credits.ogg" type="AudioStream" id=5]
 [ext_resource path="res://misc/theme.tres" type="Theme" id=6]
@@ -62,7 +62,11 @@ tracks/1/keys = {
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 3 )
 
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VideoPlayer" type="VideoPlayer" parent="Control"]
 margin_right = 1920.0
 margin_bottom = 1080.0
 stream = ExtResource( 4 )
@@ -104,7 +108,11 @@ custom_fonts/bold_font = SubResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
-[b]3D modelling[/b]
+[b]Code[/b]
+PizzArt
+TeaWhyDee
+
+[b]3D modeling[/b]
 TeaWhyDee
 Sandeia
 
@@ -112,13 +120,9 @@ Sandeia
 TeaWhyDee
 PizzArt
 
-[b]Code[/b]
-TeaWhyDee
-PizzArt
-
 [b]Music[/b]
-TwoSpaces
 Levi Vilas Boas | EngarrafAudio
+TwoSpaces
 
 [b]SFX[/b]
 Levi Vilas Boas | EngarrafAudio
@@ -126,29 +130,29 @@ Levi Vilas Boas | EngarrafAudio
 [b]Additional Sources[/b]
 kyles@Freesound.org
 [/center]"
-text = "[center]
-[b]3D modelling[/b]
+text = "
+Code
+PizzArt
+TeaWhyDee
+
+3D modeling
 TeaWhyDee
 Sandeia
 
-[b]Level design[/b]
+Level design
 TeaWhyDee
 PizzArt
 
-[b]Code[/b]
-TeaWhyDee
-PizzArt
-
-[b]Music[/b]
+Music
+Levi Vilas Boas | EngarrafAudio
 TwoSpaces
+
+SFX
 Levi Vilas Boas | EngarrafAudio
 
-[b]SFX[/b]
-Levi Vilas Boas | EngarrafAudio
-
-[b]Additional Sources[/b]
+Additional Sources
 kyles@Freesound.org
-[/center]"
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
@@ -166,9 +170,6 @@ margin_bottom = 1024.0
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 1 )
 text = "QUIT"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="finished" from="Control/VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 [connection signal="button_down" from="Quit" to="." method="_on_Quit_button_down"]
