@@ -5,6 +5,7 @@ onready var sounds = [$Clock1, $Clock2]
 
 func _ready():
 	Global.timer = 2
+	get_viewport().connect("size_changed", self, "_on_size_changed")
 
 func play_clock():
 	sounds[current].play()
@@ -46,3 +47,6 @@ func _on_play_button_down():
 
 func _on_quit_button_down():
 	play_clock()
+
+func _on_size_changed():
+	$ViewportContainer/Viewport.size = get_viewport().size
