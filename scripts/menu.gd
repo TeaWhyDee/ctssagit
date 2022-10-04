@@ -19,6 +19,7 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_play_pressed():
+	$Music.stop()
 	get_tree().change_scene("res://scenes/level1.tscn")
 	Global.reset()
 	Overlay.get_node("HUD/C").show()
