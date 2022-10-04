@@ -19,5 +19,6 @@ color = Color( 0, 0, 0, 1 )
 [node name="Sound" type="AudioStreamPlayer" parent="EndSound"]
 stream = ExtResource( 1 )
 autoplay = true
+bus = "SFX"
 
 [connection signal="finished" from="EndSound/Sound" to="EndSound" method="_on_Sound_finished"]

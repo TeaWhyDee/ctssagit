@@ -34,11 +34,11 @@ func _oncolors_toggled(button_pressed:bool):
 	var val = 0
 	if button_pressed:
 		val = 2
-	Overlay.get_node("HUD/BBC/CRT").material.set_shader_param("aberration_amount", val)
+	Overlay.get_node("HUD/CRT").material.set_shader_param("aberration_amount", val)
 	play_clock()
 
 func _on_scanlines_toggled(button_pressed:bool):
-	Overlay.get_node("HUD/BBC/CRT").material.set_shader_param("scanlines_shown", button_pressed)
+	Overlay.get_node("HUD/CRT").material.set_shader_param("scanlines_shown", button_pressed)
 	play_clock()
 
 func _on_play_button_down():

@@ -417,13 +417,22 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 0.316161, 0, -1, 0, -4.37114e-08, 
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.5757, 2.15392, -38.3386 )
 
 [node name="wall157" parent="Map" instance=ExtResource( 9 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.9909, 2.15392, -43.9946 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.9909, 2.15392, -42.6133 )
 
 [node name="wall155" parent="Map" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 45.5756, 2.15392, -41.1291 )
 
 [node name="wall156" parent="Map" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 50.3103, 2.15392, -41.1291 )
+
+[node name="wall189" parent="Map" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.9909, 6.48967, -42.7691 )
+
+[node name="wall190" parent="Map" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 45.5756, 6.48967, -41.1291 )
+
+[node name="wall191" parent="Map" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 50.3103, 6.48967, -41.1291 )
 
 [node name="wall153" parent="Map" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41.962, 2.15392, -27.174 )
@@ -677,7 +686,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2865, 1, -5.46735 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0815, 1, -20.0807 )
 
 [node name="Box4" parent="Boxes" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.1249, 1, -39.7804 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.1603, 1, -39.8687 )
 
 [node name="Box5" parent="Boxes" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6643, 1, -28.513 )
@@ -814,7 +823,7 @@ spot_angle = 8.01064
 spot_angle_attenuation = 0.31864
 
 [node name="SpotLight12" type="SpotLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 48.8346, 13.7519, -42.8486 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 48.8346, 13.7519, -41.3575 )
 light_energy = 4.0
 shadow_enabled = true
 shadow_bias = 0.05
@@ -965,7 +974,7 @@ interactive = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.4505, 0.7, -28.8729 )
 
 [node name="Key" parent="Interactibles" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, -43 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, -41.2916 )
 
 [node name="AlarmActivator" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5129, 12.1219, -13.743 )
