@@ -7106,10 +7106,8 @@ fog_depth_curve = 0.933033
 fog_transmit_enabled = true
 tonemap_mode = 3
 tonemap_white = 1.2
-ss_reflections_enabled = true
 ss_reflections_fade_in = 0.382368
 ss_reflections_fade_out = 2.54912
-ssao_enabled = true
 ssao_radius = 0.59
 ssao_intensity = 1.41
 ssao_radius2 = 0.24
@@ -16134,13 +16132,13 @@ light_energy = 2.958
 [node name="menu_hole" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426457, 1, -0.0714979 )
 
-[node name="Circle" parent="menu_hole" index="5"]
+[node name="Circle" parent="menu_hole" index="12"]
 transform = Transform( 2.53742, 0, 0, 0, -3.02484e-07, -2.53742, 0, 2.53742, -3.02484e-07, -13.047, 15.144, 80.572 )
 
-[node name="man" parent="menu_hole" index="6"]
+[node name="man" parent="menu_hole" index="13"]
 transform = Transform( 0.636985, 0.0439791, 0.555207, 0.226333, 0.750259, -0.3191, -0.508883, 0.388738, 0.553046, -5.1253, 0.320386, 26.0619 )
 
-[node name="hole" parent="menu_hole" index="7"]
+[node name="hole" parent="menu_hole" index="14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36694, 0.108672, 25.9567 )
 
 [node name="menu_cat" parent="." instance=ExtResource( 9 )]

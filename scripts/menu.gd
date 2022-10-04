@@ -5,6 +5,8 @@ onready var sounds = [$Clock1, $Clock2]
 
 func _ready():
 	Global.timer = 2
+	if OS.has_feature("HTML5"):
+		$MarginContainer/VBoxContainer2/Buttons/Quit.hide()
 
 func play_clock():
 	sounds[current].play()
